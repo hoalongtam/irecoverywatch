@@ -73,7 +73,14 @@
 
 	
 	//Memory management for locally created objects..
-	
+	[tickerViewController release];
+	[tagsViewController release];
+	[mapViewController release];
+	[listViewController release];
+	[tagsViewNavController release];
+	[tickerViewNavController release];
+	[mapViewNavController release];
+	[listViewNavController release];
 	
     [window addSubview:tabBarController.view];
 	

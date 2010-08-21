@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -308,14 +310,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iRecoveryWatchAppDelegate.m</string>
+								<string>ListViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,23 +323,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>iRecoveryWatchAppDelegate.m</string>
+										<string>ListViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>00BFAA4A12204C8600785944</string>
+										<string>00BFAA87122054BE00785944</string>
 										<key>history</key>
 										<array>
-											<string>00BFAA111220484100785944</string>
 											<string>00BFAA121220484100785944</string>
-											<string>00BFAA131220484100785944</string>
 											<string>00BFAA141220484100785944</string>
-											<string>00BFAA151220484100785944</string>
 											<string>00BFAA161220484100785944</string>
-											<string>00BFAA171220484100785944</string>
 											<string>00BFAA181220484100785944</string>
-											<string>00BFAA33122049C500785944</string>
-											<string>00BFAA34122049C500785944</string>
+											<string>00BFAA4A12204C8600785944</string>
+											<string>00BFAA83122054BE00785944</string>
+											<string>00BFAA84122054BE00785944</string>
+											<string>00BFAA85122054BE00785944</string>
+											<string>00BFAA86122054BE00785944</string>
+											<string>00BFAA171220484100785944</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -351,14 +351,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1004, 896}}</string>
+								<string>{{0, 0}, {1004, 888}}</string>
 								<key>RubberWindowFrame</key>
 								<string>4 55 1280 1123 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>896pt</string>
+							<string>888pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -371,14 +371,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 901}, {1004, 181}}</string>
+								<string>{{0, 893}, {1004, 189}}</string>
 								<key>RubberWindowFrame</key>
 								<string>4 55 1280 1123 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>181pt</string>
+							<string>189pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -397,9 +397,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>00BFA99F12203B6500785944</string>
+				<string>00BFAA701220540E00785944</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>00BFA9A012203B6500785944</string>
+				<string>00BFAA711220540E00785944</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -537,11 +537,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>00BFA9E3122044AD00785944</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>00BFA9A212203B6500785944</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatch.xcodeproj</string>
+		<string>/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iPhone/iRecoveryWatch.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1280 1123 0 0 1920 1178 </string>
@@ -621,7 +620,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>00BFA9A212203B6500785944</string>
-				<string>00BFA9A312203B6500785944</string>
+				<string>00BFAA721220540E00785944</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -665,8 +664,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 185}}</string>
-											<string>{{316, 0}, {378, 185}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -681,8 +680,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 185}}</string>
-											<string>{{0, 185}, {694, 196}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -715,7 +714,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 185}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>436 636 694 422 0 0 1920 1178 </string>
 								</dict>
@@ -743,13 +742,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>00BFA9A412203B6500785944</string>
+				<string>00BFAA731220540E00785944</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>00BFA9A512203B6500785944</string>
-				<string>00BFA9A612203B6500785944</string>
-				<string>00BFA9A712203B6500785944</string>
-				<string>00BFA9A812203B6500785944</string>
-				<string>00BFA9A912203B6500785944</string>
+				<string>00BFAA741220540E00785944</string>
+				<string>00BFAA751220540E00785944</string>
+				<string>00BFAA761220540E00785944</string>
+				<string>00BFAA771220540E00785944</string>
+				<string>00BFAA781220540E00785944</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -876,8 +875,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -913,7 +910,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>00BFA9AA12203B6500785944</string>
+				<string>00BFAA791220540E00785944</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -923,7 +920,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
