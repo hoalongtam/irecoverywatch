@@ -11,6 +11,7 @@
 @class  TagsViewController;
 @class 	MapViewController;
 @class  ListViewController;
+@class  SettingsViewController;
 
 
 
@@ -21,6 +22,8 @@
 	TagsViewController *tagsViewController;
 	MapViewController *mapViewController;
 	ListViewController *listViewController;
+	UINavigationController	*tickerViewNavController;
+	SettingsViewController *settingsViewController;
 	
 	
 }
@@ -31,6 +34,8 @@
 @property (nonatomic, retain) TagsViewController *tagsViewController;
 @property (nonatomic, retain) MapViewController *mapViewController;
 @property (nonatomic, retain) ListViewController *listViewController;
+@property (nonatomic, retain) UINavigationController	*tickerViewNavController;
+@property (nonatomic, retain) SettingsViewController *settingsViewController;
 
 
 @end

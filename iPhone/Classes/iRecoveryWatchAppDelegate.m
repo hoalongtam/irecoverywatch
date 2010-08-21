@@ -11,12 +11,14 @@
 #import "TagsViewController.h"
 #import "MapViewController.h"
 #import "ListViewController.h"
+#import "SettingsViewController.h"
+
 
 
 @implementation iRecoveryWatchAppDelegate
 
 @synthesize window;
-@synthesize tabBarController,tickerViewController,tagsViewController,mapViewController,listViewController;
+@synthesize tabBarController,tickerViewController,tagsViewController,mapViewController,listViewController,tickerViewNavController,settingsViewController;
 
 
 #pragma mark -
@@ -36,7 +38,7 @@
    // tickerViewController.view.backgroundColor = [UIColor redColor];
     
 	//Create UINavigationController for tickerView
-	UINavigationController	*tickerViewNavController= [[UINavigationController alloc]initWithRootViewController:tickerViewController];
+	tickerViewNavController= [[UINavigationController alloc]initWithRootViewController:tickerViewController];
 	
 	UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(location)];
 	tickerViewController.navigationItem.rightBarButtonItem=barButton;
@@ -90,13 +92,14 @@
 }
 
 -(void) location{
-	//LocationViewController *locationViewController= [[LocationViewController alloc]init];
-	//[self.navigationController pushViewController:locationViewController animated:YES];
-	//[locationViewController release];
-	
+	settingsViewController= [[SettingsViewController alloc]init];
+	[tickerViewNavController pushViewController:settingsViewController animated:YES];
+	[settingsViewController release];
+	/*
 	UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Bar button Message" message:@"implement location" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];		
 	 [alertView show];
 	 [alertView release];
+	 */
 	 
 }
 
@@ -154,7 +157,8 @@
 	[tagsViewController release];
 	[mapViewController release];
 	[listViewController release];
-	
+	[tickerViewNavController release];
+	[settingsViewController release];
     [window release];
     [super dealloc];
 }
