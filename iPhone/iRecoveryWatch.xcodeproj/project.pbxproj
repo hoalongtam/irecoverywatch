@@ -54,19 +54,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		00BFAA7C1220543000785944 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				00BFA9BE12203DDA00785944 /* TickerViewController.h */,
+				00BFA9BF12203DDB00785944 /* TickerViewController.m */,
+			);
+			name = Ticker;
+			sourceTree = "<group>";
+		};
+		00BFAA7D1220546B00785944 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				00BFA9C412203E3300785944 /* MapViewController.h */,
+				00BFA9C512203E3300785944 /* MapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		00BFAA7E1220547700785944 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				00BFA9C112203E1900785944 /* TagsViewController.h */,
+				00BFA9C212203E1900785944 /* TagsViewController.m */,
+			);
+			name = Tags;
+			sourceTree = "<group>";
+		};
+		00BFAA7F1220547E00785944 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				00BFA9C712203E4800785944 /* ListViewController.h */,
+				00BFA9C812203E4800785944 /* ListViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		00BFAA801220548800785944 /* delegate */ = {
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* iRecoveryWatchAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iRecoveryWatchAppDelegate.m */,
-				00BFA9BE12203DDA00785944 /* TickerViewController.h */,
-				00BFA9BF12203DDB00785944 /* TickerViewController.m */,
-				00BFA9C112203E1900785944 /* TagsViewController.h */,
-				00BFA9C212203E1900785944 /* TagsViewController.m */,
-				00BFA9C412203E3300785944 /* MapViewController.h */,
-				00BFA9C512203E3300785944 /* MapViewController.m */,
-				00BFA9C712203E4800785944 /* ListViewController.h */,
-				00BFA9C812203E4800785944 /* ListViewController.m */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				00BFAA801220548800785944 /* delegate */,
+				00BFAA7F1220547E00785944 /* List */,
+				00BFAA7E1220547700785944 /* Tags */,
+				00BFAA7D1220546B00785944 /* Map */,
+				00BFAA7C1220543000785944 /* Ticker */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
