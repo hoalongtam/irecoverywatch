@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>00BFAA87122054BE00785944</string>
+										<string>00BFAA9B122056A900785944</string>
 										<key>history</key>
 										<array>
 											<string>00BFAA121220484100785944</string>
@@ -537,10 +537,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>00BFAA8F1220566000785944</string>
+		<string>00BFAA901220566000785944</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>00BFA9A212203B6500785944</string>
 		<string>/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iPhone/iRecoveryWatch.xcodeproj</string>
+		<string>00BFA9A212203B6500785944</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1280 1123 0 0 1920 1178 </string>
@@ -581,6 +583,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -633,7 +637,7 @@
 			<key>WindowToolGUID</key>
 			<string>00BFA9A212203B6500785944</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

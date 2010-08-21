@@ -498,6 +498,26 @@
 		vrLen = 226;
 		vrLoc = 0;
 	};
+	00BFAA8E1220566000785944 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BFA9C712203E4800785944 /* ListViewController.h */;
+		name = "ListViewController.h: 9";
+		rLen = 0;
+		rLoc = 163;
+		rType = 0;
+		vrLen = 226;
+		vrLoc = 0;
+	};
+	00BFAA9B122056A900785944 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BFA9C712203E4800785944 /* ListViewController.h */;
+		name = "ListViewController.h: 9";
+		rLen = 0;
+		rLoc = 163;
+		rType = 0;
+		vrLen = 226;
+		vrLoc = 0;
+	};
 	1D3623240D0F684500981E51 /* iRecoveryWatchAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {943, 833}}";
@@ -522,6 +542,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 00BFA99312203B5500785944 /* iRecoveryWatch */;
+		activeSDKPreference = iphoneos4.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* iRecoveryWatch */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* iRecoveryWatch */,
@@ -621,6 +642,8 @@
 			00BFAA85122054BE00785944 /* PBXTextBookmark */ = 00BFAA85122054BE00785944 /* PBXTextBookmark */;
 			00BFAA86122054BE00785944 /* PBXTextBookmark */ = 00BFAA86122054BE00785944 /* PBXTextBookmark */;
 			00BFAA87122054BE00785944 /* PBXTextBookmark */ = 00BFAA87122054BE00785944 /* PBXTextBookmark */;
+			00BFAA8E1220566000785944 /* PBXTextBookmark */ = 00BFAA8E1220566000785944 /* PBXTextBookmark */;
+			00BFAA9B122056A900785944 /* PBXTextBookmark */ = 00BFAA9B122056A900785944 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 00BFA9AB12203B6500785944 /* Source Control */;
 		userBuildSettings = {
