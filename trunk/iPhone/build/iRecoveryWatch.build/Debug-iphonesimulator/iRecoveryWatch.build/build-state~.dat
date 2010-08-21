@@ -1,256 +1,0 @@
-TiRecoveryWatch
-v7
-r0
-t304102245.026770
-cCheck dependencies
-cProcessInfoPlistFile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/Info.plist iRecoveryWatch-Info.plist
-cCompileXIB /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib
-cCompileXIB /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib
-cProcessPCH /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch.gch iRecoveryWatch_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/main.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchAppDelegate.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchViewController.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch normal i386
-cGenerateDSYMFile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch
-cTouch /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
-c000000004C6E14700000000000000132
-t1282282608
-s306
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BFDFE39000000000027C7D0
-t1274936889
-s2607056
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BFDFE7C000000000029D5D0
-t1274936956
-s2741712
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BFDFE6E0000000000001466
-t1274936942
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C0470BB00000000000009CD
-t1275359419
-s2509
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C0471620000000001D47210
-t1275359586
-s30700048
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.h
-c000000004C7003D500000000000001FC
-t1282409429
-s508
-i<UIKit/UIKit.h>
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m
-c000000004C7003D50000000000000AA1
-t1282409429
-s2721
-i"iRecoveryWatchAppDelegate.h"
-i"iRecoveryWatchViewController.h"
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.h
-c000000004C7003D500000000000000F6
-t1282409429
-s246
-i<UIKit/UIKit.h>
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m
-c000000004C7003D500000000000005C8
-t1282409429
-s1480
-i"iRecoveryWatchViewController.h"
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib
-c000000004C7003D50000000000004E7D
-t1282409429
-s20093
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app
-t1282409445
-s238
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM
-t1282409445
-s102
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/Info.plist
-t1282409443
-s619
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/MainWindow.nib
-t1282409443
-s1137
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/PkgInfo
-t1282409443
-s8
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch
-t1282409445
-s17472
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatchViewController.nib
-t1282409443
-s795
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatch.LinkFileList
-c000000004C7003E300000000000001DA
-t1282409443
-s474
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchAppDelegate.o
-t1282409444
-s48144
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchViewController.o
-t1282409444
-s34556
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/main.o
-t1282409444
-s6316
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib
-c000000004C7003D50000000000001A61
-t1282409429
-s6753
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatch_Prefix.pch
-c000000004C7003D500000000000000C5
-t1282409429
-s197
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m
-c000000004C7003D50000000000000163
-t1282409429
-s355
-i<UIKit/UIKit.h>
-
-N/var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch.gch
-t1282409444
-s15232016
-
-NiRecoveryWatch-Info.plist
-c000000004C7003D5000000000000038D
-t1282409429
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies304102243#304102243#0(0"0(0#1#0"8611738720#0"0#
-
-CCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchAppDelegate.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s304102244.669793
-e304102244.949996
-r1
-xCompileC
-xbuild/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchAppDelegate.o
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m304102244#304102244#0(0"0(0#0#81"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m8612814368#2168"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-generated-files.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-own-target-headers.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-all-target-headers.hmap -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-project-headers.hmap -F/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/include -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources/i386 -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources -include /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch -c /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchAppDelegate.m -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchAppDelegate.o0#
-
-CCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchViewController.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s304102244.932697
-e304102244.988462
-r1
-xCompileC
-xbuild/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchViewController.o
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@92"Compile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m304102244#304102244#0(0"0(0#0#84"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m8614169760#2174"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-generated-files.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-own-target-headers.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-all-target-headers.hmap -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-project-headers.hmap -F/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/include -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources/i386 -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources -include /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch -c /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/Classes/iRecoveryWatchViewController.m -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatchViewController.o0#
-
-CCompileC build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/main.o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s304102244.667771
-e304102244.932606
-r1
-xCompileC
-xbuild/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/main.o
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m304102244#304102244#0(0"0(0#0#52"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m8613418752#2118"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-generated-files.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-own-target-headers.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-all-target-headers.hmap -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-project-headers.hmap -F/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/include -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources/i386 -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources -include /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch -c /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/main.m -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib
-s304102243.186529
-e304102243.579808
-r1
-xCompileXIB
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib304102243#304102243#0(0"0(0#0#60"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib8613499328#598"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/MainWindow.nib /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
-
-CCompileXIB /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib
-s304102243.187266
-e304102243.573102
-r1
-xCompileXIB
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib
-lSLF07#2@43"CompileXIB iRecoveryWatchViewController.xib304102243#304102243#0(0"0(0#0#78"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib8613287040#634"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatchViewController.nib /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatchViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
-
-CGenerateDSYMFile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch
-s304102245.009106
-e304102245.024186
-r1
-xGenerateDSYMFile
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch
-lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch304102245#304102245#0(0"0(0#0#107"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch8613563520#425"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app.dSYM0#
-
-CLd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch normal i386
-s304102244.988554
-e304102245.008871
-r1
-xLd
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch
-xnormal
-xi386
-lSLF07#2@112"Link /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch304102244#304102245#0(0"0(0#0#0"8613670752#970"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -F/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -filelist /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/Objects-normal/i386/iRecoveryWatch.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/iRecoveryWatch0#
-
-CProcessInfoPlistFile /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/Info.plist iRecoveryWatch-Info.plist
-s304102243.156780
-e304102243.186445
-r1
-xProcessInfoPlistFile
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/Info.plist
-xiRecoveryWatch-Info.plist
-lSLF07#2@33"Process iRecoveryWatch-Info.plist304102243#304102243#0(0"0(0#0#71"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatch-Info.plist8614259488#521"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility iRecoveryWatch-Info.plist -genpkginfo /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app/Info.plist0#
-
-CProcessPCH /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch.gch iRecoveryWatch_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s304102243.579934
-e304102244.667574
-r1
-xProcessPCH
-x/var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch.gch
-xiRecoveryWatch_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@36"Precompile iRecoveryWatch_Prefix.pch304102243#304102244#0(0"0(0#0#71"/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatch_Prefix.pch8612862240#1996"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-generated-files.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-own-target-headers.hmap -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-all-target-headers.hmap -iquote /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/iRecoveryWatch-project-headers.hmap -F/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/include -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources/i386 -I/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/iRecoveryWatch.build/Debug-iphonesimulator/iRecoveryWatch.build/DerivedSources -c /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/iRecoveryWatch_Prefix.pch -o /var/folders/ov/ovprlF7MFN4eEzGc4o96MU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iRecoveryWatch_Prefix-dkltpwufetdwuwebpuqycrmppttu/iRecoveryWatch_Prefix.pch.gch0#
-
-CTouch /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app
-s304102245.024267
-e304102245.026745
-r1
-xTouch
-x/Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app
-lSLF07#2@98"Touch /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app304102245#304102245#0(0"0(0#0#0"8613152064#299"    cd /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Muthu/iPhoneDev/DevCamp/iRecoveryWatch/build/Debug-iphonesimulator/iRecoveryWatch.app0#
-
