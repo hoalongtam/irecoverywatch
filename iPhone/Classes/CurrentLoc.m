@@ -11,7 +11,7 @@
 
 @implementation CurrentLoc
 
-@synthesize locationManager;
+@synthesize locationManager,longitude,latitude;
 
 - (id)init {
 	self = [super init];
@@ -24,6 +24,26 @@
     }
 	
 	return self;
+}
+
+- (id) initWithLongitude: (double) _long latitude:(double) _lat{
+	
+	if (self = [super init]) {
+		if (self != nil) {
+			self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+			self.locationManager.delegate = self; // send loc updates to myself
+			
+			self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+			[self.locationManager startUpdatingLocation];
+			
+			self.longitude=_long;
+			self.latitude =_lat;
+		}
+		
+		
+	}
+	return self;
+	
 }
 
 /*
@@ -42,6 +62,8 @@
            fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Location: %@", [newLocation description]);
+	self.longitude=newLocation.coordinate.longitude;
+	self.latitude =newLocation.coordinate.latitude;
 }
 
 - (void)locationManager:(CLLocationManager *)manager

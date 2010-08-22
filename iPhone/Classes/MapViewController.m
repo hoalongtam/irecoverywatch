@@ -7,7 +7,8 @@
 //
 
 #import "MapViewController.h"
-
+#import "Recipient.h"
+#import "iRecoveryWatchAppDelegate.h"
 
 @implementation MapViewController
 
@@ -53,10 +54,16 @@
 
 - (void) viewDidAppear:(BOOL)animated {
 	
+	NSLog(@"stop here");
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	[self doAnnotations:delegate.recipientArray];
+	/*
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 
 	AwardData *newEntry = [[AwardData alloc] init];
 	// Set Values
+	
 	newEntry.CompanyName = @"ABC";
 	newEntry.jobs = 23;
 	newEntry.amount = 12345.46;
@@ -82,12 +89,14 @@
 	[self doAnnotations:array];
 	[self doOverlays:array];
 	[array release];
+	 */
 }
 
 
 - (MKOverlayView *)mapView:(MKMapView *)mapViewx viewForOverlay:(id <MKOverlay>)overlay
 {
 	MKOverlayView *ovlView = nil;
+	
 	/* 
 	if (overlay == mapViewx.userLocation)
 	{
@@ -232,7 +241,28 @@
 
 - (void)doAnnotations:(NSMutableArray *)recoveryData {
 	NSMutableArray *annotationList = [[NSMutableArray alloc] init];
+	NSLog(@"doAnnotations recoveryData count = %d",[recoveryData count]);
+	for (Recipient *recipient in recoveryData) {
+		
+		NSLog(@"latitude %f",[[recipient latitude] floatValue]);
+		NSLog(@"logitude %f",[[recipient logitude] floatValue]);
+		
+		
+		AnnotationListObject *newAnnotation = [AnnotationListObject new];
+		
+		CLLocationCoordinate2D tempCoordinate;
+		tempCoordinate.latitude =[[recipient latitude] floatValue];  // set latitude to required value
+		tempCoordinate.longitude =  [[recipient logitude] floatValue];  // set longitude to required value
+		
+		[newAnnotation setCoordinate: tempCoordinate];
+		[newAnnotation setTitle: [recipient companyName]]; // or whatever
+		NSLog(@"Company name %@",[recipient companyName]);
+		[newAnnotation setSubtitle: [NSString stringWithFormat:@"%f", [recipient totalAmount]]]; // or whatever
+		[annotationList addObject: newAnnotation];
+		[newAnnotation release];
+	}
 	// create loop here if necessary
+	/*
 	for (AwardData *entryToAnnotate in recoveryData) {
 		AnnotationListObject *newAnnotation = [AnnotationListObject new];
 		CLLocationCoordinate2D tempCoordinate;
@@ -243,7 +273,7 @@
 		[newAnnotation setSubtitle: [NSString stringWithFormat:@"%f", entryToAnnotate.amount]]; // or whatever
 		[annotationList addObject: newAnnotation];
 		[newAnnotation release];
-	}
+	}*/
 	// end loop here if looped
 	[mapView addAnnotations: annotationList];
 	

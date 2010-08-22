@@ -20,7 +20,8 @@
 @implementation iRecoveryWatchAppDelegate
 
 @synthesize window;
-@synthesize tabBarController,tickerViewController,tagsViewController,mapViewController,listViewController,tickerViewNavController,settingsViewController;
+@synthesize tabBarController,tickerViewController,tagsViewController,mapViewController,listViewController,
+settingsViewController,recipientArray,currentLocation;
 
 
 #pragma mark -
@@ -29,12 +30,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
 	jsonResponseData = [[NSMutableData data] retain];
+	
+	//Get the lat and lon
+	
+	currentLocation = [[CurrentLoc alloc] initWithLongitude:37.37688 latitude:-121.9214];
+	
+	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=1",[currentLocation latitude],[currentLocation longitude]];
+	
+	[self getJSONData:queryString urlDelegate:self];
+		
+	
 	//create tab bar controller
 	tabBarController = [[UITabBarController alloc] init];
 
 	
 	//======================= TickerView ==============================================
-    tickerViewController = [[TickerViewController alloc] init];
+     tickerViewController = [[TickerViewController alloc] init];
 	tickerViewController.title=@"Ticker";
 	//tickerViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
    // tickerViewController.view.backgroundColor = [UIColor redColor];
@@ -67,19 +78,12 @@
 	// Add all the view controllers as children of the tab bar controller
     tabBarController.viewControllers = [NSArray arrayWithObjects:tickerViewNavController,mapViewNavController,listViewNavController, nil];
 
-	
-	//Memory management for locally created objects..
-	[tickerViewController release];
-	[tagsViewController release];
-	[mapViewController release];
-	[listViewController release];
 	[tickerViewNavController release];
 	[mapViewNavController release];
 	[listViewNavController release];
 	
-	//Load initial data
-	//TODO : HOW TO DISPLAY THE VIEW ONCE THE DATA COMES BACK...
-	[self getJSONData:@"" urlDelegate:self];
+	
+	
 	
     [window addSubview:tabBarController.view];
 	
@@ -90,24 +94,38 @@
 
 -(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate{
 	
-	//static NSString *baseURL=@"http://irecoverywatch.appspot.com/query?";
-	NSString *baseURL= [NSString stringWithString:@"http://irecoverywatch.appspot.com/query?lat=37.3&lon=-121.83&tol=5"];
+	static NSString *baseURL=@"http://irecoverywatch.appspot.com/query?";
+	//NSString *baseURL= [NSString stringWithString:@"http://irecoverywatch.appspot.com/query?lat=37.3&lon=-121.83&tol=5"];
 	NSString *requestURL=[baseURL stringByAppendingString:_queryString];
+	
 	
 	NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
 	
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	[jsonResponseData appendData:data];	
+	recipientArray = [[NSMutableArray alloc] init];
+	self.recipientArray = [self getRecipientsData:jsonResponseData];
 	
-    [[NSURLConnection alloc] initWithRequest:request delegate:_delegate];
+	
+	
+	
+	
+	
+	//NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
+	//[[NSURLConnection alloc] initWithRequest:request delegate:_delegate];
 }
+
 -(NSMutableArray *) getRecipientsData:(NSMutableData *) _responseData{
 	
 	NSString *responseString =[[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
+	[_responseData release];
 	//NSLog(@"JSON Response : %@",responseString);						 
 	//NSDictionary *results = [responseString JSONValue];
 	NSDictionary *results = [responseString JSONValue];
 	NSArray *recipients =[results objectForKey:@"results"];
 	
-	NSMutableArray *recipientReturnList = [[[NSMutableArray alloc]initWithCapacity:[recipients count]] autorelease];
+	
+	NSMutableArray *recipientReturnList = [[NSMutableArray alloc]initWithCapacity:[recipients count]];
 	for(int i=0;i<[recipients count];i++)
  {
 	 NSDictionary *item= [recipients objectAtIndex:i];
@@ -128,8 +146,15 @@
 														logitude:logitude 
 														latitude:latitude 
 												   primaryAgency:primaryAgency];
+	// [companyId release];
+	 //[companyName release];
+	 //[totalAmount release];
+	 //[totalJobs release];
+	 //[logitude release];
+	 //[latitude release];
+	 //[primaryAgency release];
 	 [recipientReturnList	addObject:recipient];
-	 [recipient release];
+	// [recipient release];
 	}
 	
 	
@@ -151,13 +176,10 @@
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
-	
-	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSMutableArray *recipientArray = [delegate getRecipientsData:jsonResponseData];
-//TODO: LOAD DATA HERE ********************
-	NSLog(@"recipientArray %@ = ",recipientArray);
-	
-}
+	[connection release];
+	recipientArray = [[NSMutableArray alloc] init];
+	self.recipientArray = [self getRecipientsData:jsonResponseData];
+ }
 
 -(void) location{
 	settingsViewController= [[SettingsViewController alloc]init];
@@ -224,8 +246,9 @@
 	[tickerViewController release];
 	[mapViewController release];
 	[listViewController release];
-	[tickerViewNavController release];
 	[settingsViewController release];
+	[tickerViewNavController release];
+	
     [window release];
     [super dealloc];
 }
