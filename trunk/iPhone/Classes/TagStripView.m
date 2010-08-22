@@ -20,7 +20,7 @@
 
 @implementation TagStripView
 
-@synthesize speed;
+@synthesize speed=_speed, reverse=_reverse;
 
 #pragma mark NSObject
 
@@ -68,8 +68,15 @@
 
 #pragma mark  PrivateMethods
 - (void) scrollTick {
-  self.contentOffset = CGPointMake(self.contentOffset.x + (speed / 2.0), self.contentOffset.y);
-  if (self.contentOffset.x + self.frame.size.width > self.contentSize.width)
-    self.contentOffset = CGPointMake(0, 0);
+  if (_reverse) {
+    if (self.contentOffset.x <= 4) {
+      self.contentOffset = CGPointMake(self.contentSize.width - self.frame.size.width, 0);      
+    }
+    self.contentOffset = CGPointMake(self.contentOffset.x - (_speed / 2.0), self.contentOffset.y);
+  } else {
+    self.contentOffset = CGPointMake(self.contentOffset.x + (_speed / 2.0), self.contentOffset.y);
+    if (self.contentOffset.x + self.frame.size.width > self.contentSize.width)
+      self.contentOffset = CGPointMake(0, 0);    
+  }
 }
 @end
