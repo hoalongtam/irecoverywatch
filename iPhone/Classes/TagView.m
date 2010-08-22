@@ -39,12 +39,12 @@
     _titleLabel.textColor = _foregroundColor;
     
     CGFloat titleSize = 12;
-    if (amount > 600000)
-      titleSize = 12.0;
-    else if (amount > 20000)
-      titleSize = 12;
+    if (amount > 1000000)
+      titleSize = 16.0;
+    else if (amount > 100000)
+      titleSize = 14;
     else if (amount > 10000)
-      titleSize = 18;
+      titleSize = 12;
 
 //    NSLog(@"Amount: %f Fontsize: %f", amount, titleSize);
     _titleLabel.font = [UIFont fontWithName:@"Arial" size: titleSize];
@@ -152,7 +152,7 @@
   // Fill up the lines 
   
   // If too many lines, make it wider
-  if ([words count] > 8) 
+  if ([words count] > 6) 
     longestWordLength *= 2;
   for (word in words) {
     // We allow a bit more than the longest word
