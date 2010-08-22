@@ -64,7 +64,7 @@ class Job(db.Model):
                 "PROJ_NAME" : self.project_name,
                 "PROJ_DESC" : self.project_desc,
                 "FUNDING_AGCY" : self.funding_agency,
-                "AWD_KEY" : self.award_key,
+                "AWD_KEY" : str(self.key()),
                 "LAT" : self.pop_lat, "LON" : self.pop_lon,
                 "ADDR" : self.pop_addr, "ST" : self.pop_state,
                 "CITY" :  self.pop_city, "CD" : self.pop_cd,
@@ -83,7 +83,12 @@ class AdminHandler(webapp.RequestHandler):
 
 class DetailHandler(webapp.RequestHandler):
     def get(self):
-        pass
+        id = db.Key(self.request.get("key"))
+        job = Job.get(id)
+        self.response.out.write(job)
+
+def goodAwd(awd):
+    return awd != None and awd.amount != None and awd.amount > 0 and awd.jobs_count != None and awd.jobs_count >= 0
 
 class QueryHandler(webapp.RequestHandler):
     def get(self):
@@ -104,6 +109,7 @@ class QueryHandler(webapp.RequestHandler):
             for m in matches:
                 logging.info(m)
             logging.info("done")
+        matches = filter(goodAwd, matches)
         self.response.out.write('{"results" : [' + ",".join(map(str,matches)) + "]}")
 
 
