@@ -53,55 +53,15 @@
 		[self.view addSubview:strip];
 		y += h;
 	}
-  
-/*
-	for (int i = 0 ; i < 100 ; ++i) {
-		NSString *title;
-		
-		switch(i % 4) {
-			case 0:
-				title = @"Highland Technology Servies";
-				break;
-			case 1:
-				title = @"EBay";
-				break;
-			case 2:
-				title = @"University of California";
-				break;
-			default:
-				title = @"California Department of Conservation";
-				break;
-		}
-		float amount = (rand() % 10000000) / 100.0;
-		float grayness = 0.6 + (rand() % 40) / 100.0;
-		UIColor *backgroundColor = [UIColor colorWithRed: grayness
-												   green: grayness
-													blue: grayness 
-												   alpha: 0.2 + (rand() % 60) / 100.0];
-		TagView *tagView = [[TagView alloc] initWithTitle: title
-												   amount: amount
-										  foregroundColor: [UIColor whiteColor]
-										  backgroundColor: backgroundColor];
-		[tagView sizeToFit];
-		
-		TagStripView *strip = [stripViews objectAtIndex: i % STRIP_COUNT];
-		[strip addTagView: tagView];
-	}
- */
+  iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	[self loadData:delegate.recipientArray];
 	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
 		TagStripView *strip = [stripViews objectAtIndex: i];
 		[strip calculateLayout];    
 	}
 	
 }
-
-- (void) viewDidAppear:(BOOL)animated {
-	
-	NSLog(@"stop here");
-	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	[self loadData:delegate.recipientArray];
-}  
 
 /*
  // Override to allow orientations other than the default portrait orientation.

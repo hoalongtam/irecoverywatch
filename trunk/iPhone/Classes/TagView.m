@@ -48,9 +48,16 @@
     _titleLabel.font = [UIFont fontWithName:@"Arial" size: titleSize];
     
     _amountLabel = [[UILabel alloc] initWithFrame: CGRectNull];
-    NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
-    [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
-    _amountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:amount]];
+    if (amount > 0.0) {
+      NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+      [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+      _amountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:amount]];     
+    }
+    else {
+      _amountLabel.text = @"";
+    }
+
+ 
     _amountLabel.backgroundColor = [UIColor clearColor];
     _amountLabel.font = [UIFont fontWithName:@"Arial" size: 12.0];
     _amountLabel.textColor = _foregroundColor;
@@ -136,6 +143,9 @@
   }
   // Fill up the lines 
   
+  // If too many lines, make it wider
+  if ([words count] > 8) 
+    longestWordLength *= 2;
   for (word in words) {
     // We allow a bit more than the longest word
     if ([currentLine length] + [word length] + 1 <= longestWordLength + 4) 
