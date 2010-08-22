@@ -21,86 +21,117 @@ try:
     import json
 except ImportError:
     from django.utils import simplejson as json
+import logging
 
+"""
 class Company(db.Model):
     name = db.StringProperty(required=True)
-    duns = db.IntegerProperty(required=True)
-    awards = db.ListProperty(str,required=True)
-    jobs = db.IntegerProperty(required=True)
-    totalReceived = db.IntegerProperty(required=True)
+    duns = db.IntegerProperty()
+    awards = db.ListProperty(str,)
+    jobs = db.IntegerProperty()
+    totalReceived = db.IntegerProperty()
+    """ 
+class Job(db.Model):
+    recipient_role = db.StringProperty(choices=set(["P", "S", "PV", "SV"]))
+    year = db.IntegerProperty()
+    qtr = db.IntegerProperty()
+    recipient_duns = db.IntegerProperty()
+    recipient_name = db.StringProperty()
+    recipient_zip = db.IntegerProperty()
+    amount = db.FloatProperty()
+    award_date = db.StringProperty()
+    award_type = db.StringProperty()
+    award_desc = db.TextProperty()
+    project_name = db.StringProperty()
+    project_desc = db.TextProperty()
+    funding_agency = db.StringProperty()
+    award_key = db.StringProperty()
+    pop_lat = db.FloatProperty()
+    pop_lon = db.FloatProperty()
+    pop_addr = db.StringProperty()
+    pop_state = db.StringProperty()
+    pop_city = db.StringProperty()
+    pop_cd = db.StringProperty()
+    jobs_list = db.TextProperty()
+    jobs_count = db.FloatProperty()
     
     def __str__(self):
-        data = {"NAME" : self.name,
-                "DUNS" : self.duns,
-                "AWARDS": map(lambda id: lookupAward(id), self.awards),
-                "JOBS" : self.jobs,
-                "RCVD" : self.totalReceived}
+        data = {"YR" : self.year, "QTR" : self.qtr,
+                "RECIP_DUNS" : self.recipient_duns, 
+                "RECIP_NAME" : self.recipient_name,
+                "AMT" : self.amount, "DATE": self.award_date,
+                "AWD_TYPE" : self.award_type, "AWD_DESC" : self.award_desc,
+                "PROJ_NAME" : self.project_name,
+                "PROJ_DESC" : self.project_desc,
+                "FUNDING_AGCY" : self.funding_agency,
+                "AWD_KEY" : self.award_key,
+                "LAT" : self.pop_lat, "LON" : self.pop_lon,
+                "ADDR" : self.pop_addr, "ST" : self.pop_state,
+                "CITY" :  self.pop_city, "CD" : self.pop_cd,
+                "JOBS_LIST" : self.jobs_list, "JOBS_COUNT" : self.jobs_count}
         return json.dumps(data)
-
-class Award(db.Model):
-    lat = db.FloatProperty()
-    lon = db.FloatProperty()
-    id = db.StringProperty(required=True)
-    amount = db.IntegerProperty(required=True)
-    funding_agency = db.StringProperty(required=True)
-    recipient_duns = db.IntegerProperty(required=True)
-    description = db.TextProperty()
-    
-    def __str__(self):
-        data = {"LAT" : lat,
-                "LON" : lon,
-                "ID" : id,
-                "AMT" : amount,
-                "FUNDING_AGCY" : funding_agency,
-                "RECIP_DUNS" : repient_duns,
-                "DESC" : description}
-        return json.dumps(data)
-
-def lookupAward(id):
-    award = Award.gql("WHERE id = :1", id)
-    return str(award)
 
 class AdminHandler(webapp.RequestHandler):
     def get(self):
-        self.response.out.write("""
-<html>
-<body>
-<form action="/admin" method="post">
-<input type="text" name="name">
-<input type="text" name="duns">
-<input type="text" name="awards">
-<input type="text" name="jobs">
-<input type="text" name="received">
-<input type="submit" value="Enter Company">
-</body>
-</html>
-""")
+        pass
     def post(self):
-        name = self.request.get("name")
-        duns = long(self.request.get("duns"))
-        awards = map(lambda x: x.strip(), self.request.get("awards").split(","))
-        jobs = int(self.request.get("jobs"))
-        recvd = long(self.request.get("received"))
-        c = Company(name=name, duns=duns, awards=awards, jobs=jobs, totalReceived=recvd)
-        self.response.out.write(c)
-        c.put()
-        
+        pass
 
 class DetailHandler(webapp.RequestHandler):
     def get(self):
-        company_id = long(self.request.get("company"))
-        matches = Company.gql("WHERE duns = :1", company_id)
-        self.response.out.write(matches[0])
-        
+        pass
+
+class QueryHandler(webapp.RequestHandler):
+    def get(self):
+        lat = float(self.request.get("lat"))
+        lon = float(self.request.get("lon"))
+        tol = float(self.request.get("tol") or 50) / 100.0
+        logging_on = self.request.get("logging")
+        if logging_on: logging.info((lat, lon, tol))
+        matches = db.GqlQuery("SELECT * FROM Job WHERE pop_lat > :1 AND pop_lat < :2", lat - tol, lat + tol)
+        if logging_on:
+            logging.info("finished query")
+            for m in matches:
+                logging.info(m)
+            logging.info("starting filter")
+        matches = filter(lambda awd: lon - tol < awd.pop_lon < lon + tol, matches)
+        if logging_on:
+            logging.info("finished filter")
+            for m in matches:
+                logging.info(m)
+            logging.info("done")
+        self.response.out.write('{"results" : [' + ",".join(map(str,matches)) + "]}")
+
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-        self.response.out.write('Hello world!')
+        self.response.out.write("Use /detail?company=DUNS_ID to access "
+                                + "information about a company and "
+                                + "contracts it has received")
+
+def parse_int(n):
+    try:
+        return int(n)
+    except ValueError:
+        return -1
+
+def parse_long(n):
+    try:
+        return long(n)
+    except ValueError:
+        return -1
+
+def parse_float(n):
+    try:
+        return float(n)
+    except ValueError:
+        return -1.0
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler),
-                                         ('/admin', AdminHandler),
-                                         ('/detail', DetailHandler)],
+                                          ('/admin', AdminHandler),
+                                          ('/query', QueryHandler),
+                                          ('/detail', DetailHandler)],
                                          debug=True)
     util.run_wsgi_app(application)
 
