@@ -11,7 +11,7 @@
 
 @implementation AnnotationListObject
 
-@synthesize coordinate, title, subtitle;
+@synthesize coordinate, title, subtitle, key;
 
 - (void) moveAnnotation: (CLLocationCoordinate2D) newCoordinate {
 	coordinate = newCoordinate;

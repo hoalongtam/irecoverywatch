@@ -12,6 +12,7 @@
 
 @implementation MapViewController
 
+@synthesize strCurKey;
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -199,7 +200,7 @@
 					   action:@selector(infoButton:)
 			forControlEvents:UIControlEventTouchDown];
 			annView.rightCalloutAccessoryView = button;
-			
+			self.strCurKey = [(AnnotationListObject *)annotation key];
 			//UIImage *agency = [[UIImage alloc]initWithContentsOfFile:@"/Work/iPhoneTouchPad/iOSDevCamp/irecoverywatch/iPhone/agency.png"];
 			UIImage *agency = [UIImage imageNamed:@"agency.png"];
 			
@@ -217,7 +218,7 @@
 
 - (void)infoButton:(id)sender {
 	DetailViewCompanyController *detailView = [[DetailViewCompanyController alloc] init];
-	
+	detailView.strKey = self.strCurKey;
 	[[self navigationController] pushViewController:detailView animated:YES];
 	
 	[detailView release];
@@ -277,7 +278,8 @@
 		tempCoordinate.longitude =  [[recipient logitude] floatValue];  // set longitude to required value
 		
 		[newAnnotation setCoordinate: tempCoordinate];
-		[newAnnotation setTitle: [recipient companyName]]; // or whatever
+		[newAnnotation setTitle: [recipient companyName]];
+		[newAnnotation setKey: [recipient awardKey]];
 		//NSLog(@"Company name %@",[recipient companyName]);
 		NSString *_strAmount = @"Unknown";
 		NSString *_strJobs = @"Unknown";

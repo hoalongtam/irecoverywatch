@@ -12,7 +12,7 @@
 
 @implementation DetailViewCompanyController
 
-@synthesize webView;
+@synthesize webView, strKey;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -24,7 +24,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-	NSString *urlAddress = @"http://www.recovery.gov";
+	//NSString *urlAddress = @"http://www.recovery.gov";
+	NSString *urlAddress = [NSString stringWithFormat: @"http://irecoverywatch.appspot.com/detail?key=%@",[self strKey]];
 	
 	//Create a URL object.
 	NSURL *url = [NSURL URLWithString:urlAddress];
@@ -101,6 +102,8 @@
 	 if (self = [super init]) {
 	 }
 	 */
+	strKey = @"";
+	
 	return self;
 }
 /*

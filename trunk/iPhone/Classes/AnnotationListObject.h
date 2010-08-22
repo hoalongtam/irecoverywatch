@@ -14,10 +14,12 @@
 	CLLocationCoordinate2D coordinate;
 	NSString *title;
 	NSString *subtitle;
+	NSString *key;
 }
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *key;
 
 - (void) moveAnnotation: (CLLocationCoordinate2D) newCoordinate;
 @end

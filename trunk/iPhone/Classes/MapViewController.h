@@ -23,7 +23,10 @@
 	
 	MKReverseGeocoder	*geoCoder;
 	CurrentLoc			*cLoc;
+	NSString			*strCurKey;
 }
+
+@property  (nonatomic, retain)  NSString *strCurKey;
 
 - (void)infoButton:(id)sender;
 - (void)showMap;
