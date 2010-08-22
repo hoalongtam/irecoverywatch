@@ -262,14 +262,14 @@
 }
 
 - (void)doAnnotations:(NSMutableArray *)recoveryData {
+	int Count = 0; 
 	NSMutableArray *annotationList = [[NSMutableArray alloc] init];
 	NSLog(@"doAnnotations recoveryData count = %d",[recoveryData count]);
 	for (Recipient *recipient in recoveryData) {
 		
-		NSLog(@"latitude %0.2f",[[recipient latitude] floatValue]);
-		NSLog(@"logitude %0.2f",[[recipient logitude] floatValue]);
-		
-		
+		//NSLog(@"latitude %0.2f",[[recipient latitude] floatValue]);
+		//NSLog(@"logitude %0.2f",[[recipient logitude] floatValue]);
+
 		AnnotationListObject *newAnnotation = [AnnotationListObject new];
 		
 		CLLocationCoordinate2D tempCoordinate;
@@ -278,7 +278,7 @@
 		
 		[newAnnotation setCoordinate: tempCoordinate];
 		[newAnnotation setTitle: [recipient companyName]]; // or whatever
-		NSLog(@"Company name %@",[recipient companyName]);
+		//NSLog(@"Company name %@",[recipient companyName]);
 		NSString *_strAmount = @"Unknown";
 		NSString *_strJobs = @"Unknown";
 		float _amount = [[recipient totalAmount] floatValue];
@@ -286,25 +286,20 @@
 		if (_amount > 0) {
 			_strAmount = [NSString stringWithFormat:@"%0.2f", _amount];
 		}
-		NSLog(@"Amount %@", _strAmount);
+		//NSLog(@"Amount %@", _strAmount);
 		if (_jobs > 0) {
 			_strJobs = [NSString stringWithFormat:@"%d", _jobs];
 		}
-		NSLog(@"Jobs %@", _strJobs);
+		//NSLog(@"Jobs %@", _strJobs);
 		
 		[newAnnotation setSubtitle : [NSString stringWithFormat:@"$ %@ / %@ jobs", _strAmount, _strJobs]];
-		if (_amount > 0 || _jobs > 0) {
+		if (_amount > 0 && _jobs > 0) {
 			[annotationList addObject: newAnnotation];
-
+			Count++;
+			
 		}
 		[newAnnotation release];
 	}
-	
-	
-	
-	
-	
-	
 	
 	// create loop here if necessary
 	/*
@@ -320,12 +315,7 @@
 		[newAnnotation release];
 	}*/
 	// end loop here if looped
-	
-	
-	
-	
-	
-	
+	NSLog(@"Selected items %d", Count);
 	
 	[mapView addAnnotations: annotationList];
 	
