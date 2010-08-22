@@ -37,10 +37,12 @@
 }
 
 - (void)viewDidLoad {
-	mapView = (MKMapView*)self.view;
+	//mapView = (MKMapView*)self.view;
 	
+	//[self.view addSubview:mapView];
+
+	[mapView setZoomEnabled:YES];
 	[mapView setMapType:MKMapTypeStandard];
-    [mapView setZoomEnabled:YES];
     [mapView setScrollEnabled:YES];
     [mapView setShowsUserLocation:YES];
 		
@@ -81,6 +83,54 @@
 	[array release];
 }
 
+/*
+- (MKOverlayView *)mapView:(MKMapView *)mapViewx viewForOverlay:(id <MKOverlay>)overlay
+{
+	/*
+	MKPinAnnotationView *annView;
+	 
+	if (annotation == mapViewx.userLocation)
+	{
+		[mapView setCenterCoordinate:mapView.userLocation.coordinate animated:TRUE];
+		// We can return nil to let the MapView handle the default annotation view (blue dot):
+		return nil;
+		
+		// Or instead, we can create our own blue dot and even configure it:
+		//annView = (MKPinAnnotationView*)[mapViewx dequeueReusableAnnotationViewWithIdentifier:@"blueDot"];
+		//if (annView != nil)
+		{
+			//	annView.annotation = annotation;
+		}
+		//else
+		{
+			//	annView = (MKPinAnnotationView*)[[[NSClassFromString(@"MKUserLocationView") alloc] initWithAnnotation:annotation reuseIdentifier:@"blueDot"] autorelease];
+			
+			// Optionally configure the MKUserLocationView object here
+			// Google MKUserLocationView for the options
+		}
+	}
+	else
+	{
+		// The requested annotation view is for another annotation than the userLocation.
+		// Let's return a normal pin:
+		annView = (MKPinAnnotationView*)[mapViewx dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
+		
+		if (annView != nil)
+		{
+			annView.annotation = annotation;
+		}
+		else
+		{
+			annView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
+			annView.pinColor = MKPinAnnotationColorGreen;
+			
+			annView.canShowCallout = TRUE;
+		}
+		
+	}
+	
+}
+*/
 - (MKAnnotationView *) mapView:(MKMapView *)mapViewx viewForAnnotation:(id <MKAnnotation>) annotation
 {
 	MKPinAnnotationView *annView; //=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
