@@ -38,7 +38,7 @@
 	
 	//cLoc = [[CurrentLoc alloc]init];
 	
-	NSLog(@"stop here");
+	//NSLog(@"stop here");
 	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	[self doAnnotations:delegate.recipientArray];
@@ -293,7 +293,10 @@
 		NSLog(@"Jobs %@", _strJobs);
 		
 		[newAnnotation setSubtitle : [NSString stringWithFormat:@"$ %@ / %@ jobs", _strAmount, _strJobs]];
-		[annotationList addObject: newAnnotation];
+		if (_amount > 0 || _jobs > 0) {
+			[annotationList addObject: newAnnotation];
+
+		}
 		[newAnnotation release];
 	}
 	
