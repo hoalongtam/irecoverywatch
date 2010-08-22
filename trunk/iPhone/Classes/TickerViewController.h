@@ -10,7 +10,7 @@
 
 
 @interface TickerViewController : UIViewController {
-   NSMutableData *jsonResponseData;
+
 }
 
 @end
