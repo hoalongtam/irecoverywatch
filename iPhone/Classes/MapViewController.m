@@ -12,20 +12,9 @@
 
 @implementation MapViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
     return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -58,6 +47,10 @@
 	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	[self doAnnotations:delegate.recipientArray];
+
+	
+	
+	
 	/*
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 
@@ -90,12 +83,23 @@
 	[self doOverlays:array];
 	[array release];
 	 */
+
+
+
+
 }
 
 
 - (MKOverlayView *)mapView:(MKMapView *)mapViewx viewForOverlay:(id <MKOverlay>)overlay
 {
 	MKOverlayView *ovlView = nil;
+	
+
+	
+	
+	
+	
+	
 	
 	/* 
 	if (overlay == mapViewx.userLocation)
@@ -138,6 +142,10 @@
 		
 	}
 	*/
+	
+	
+	
+	
 	
 	return ovlView;
 }
@@ -215,19 +223,31 @@
 
 - (void)doOverlays:(NSMutableArray *)recoveryData {
 	NSMutableArray *overlayList = [[NSMutableArray alloc] init];
+	
+	
 	// create loop here if necessary
+	
+	
 	for (AwardData *entryToAnnotate in recoveryData) {
 		OverlayListObjects *newOverlay = [OverlayListObjects new];
 		CLLocationCoordinate2D tempCoordinate;
 		tempCoordinate.latitude = entryToAnnotate.latitude;  // set latitude to required value
 		tempCoordinate.longitude =  entryToAnnotate.longitude; // set longitude to required value
+		[overlayList addObject: newOverlay];
+		[newOverlay release];
+		
+		
+		
+		
 		//[newOverlay setCoordinate: tempCoordinate];
 		//[newOverlay setTitle: entryToAnnotate.CompanyName]; // or whatever
 		//[newOverlay setSubtitle: [NSString stringWithFormat:@"%f", entryToAnnotate.amount]]; // or whatever
 		//MKMapRect rect = MKMapRectMake(0, 0, 100, 100);
 		//[newOverlay setBoundingMapRect:MKMapRectMake(0, 0, 100, 100)];
-		[overlayList addObject: newOverlay];
-		[newOverlay release];
+		
+		
+		
+		
 	}
 	// end loop here if looped
 	[mapView addOverlays: overlayList];
@@ -261,6 +281,13 @@
 		[annotationList addObject: newAnnotation];
 		[newAnnotation release];
 	}
+	
+	
+	
+	
+	
+	
+	
 	// create loop here if necessary
 	/*
 	for (AwardData *entryToAnnotate in recoveryData) {
@@ -275,6 +302,13 @@
 		[newAnnotation release];
 	}*/
 	// end loop here if looped
+	
+	
+	
+	
+	
+	
+	
 	[mapView addAnnotations: annotationList];
 	
 	[annotationList release];
@@ -296,6 +330,11 @@
 	userCoordinate.longitude = -121.9214;
 	
 	mapView.region = MKCoordinateRegionMakeWithDistance(userCoordinate, 2000, 2000); 
+	
+	
+	
+	
+	
 	
 	/*
 	// Region and Zoom
@@ -332,7 +371,11 @@
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark
 {
 	NSLog(@"Reverse Geocoder completed");
-//	mPlacemark=placemark;
+
+	
+	
+	
+	//	mPlacemark=placemark;
 //	[mapView addAnnotation:placemark];
 }
 
