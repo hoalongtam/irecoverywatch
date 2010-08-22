@@ -35,6 +35,13 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		27399E431221A1A500608494 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E421221A1A500608494 /* Default@2x.png */; };
+		27399E4A1221A45100608494 /* MapTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E441221A45100608494 /* MapTab.png */; };
+		27399E4B1221A45100608494 /* MapTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E451221A45100608494 /* MapTab@2x.png */; };
+		27399E4C1221A45100608494 /* RequestTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E461221A45100608494 /* RequestTab.png */; };
+		27399E4D1221A45100608494 /* RequestTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E471221A45100608494 /* RequestTab@2x.png */; };
+		27399E4E1221A45100608494 /* TickerTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E481221A45100608494 /* TickerTab.png */; };
+		27399E4F1221A45100608494 /* TickerTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27399E491221A45100608494 /* TickerTab@2x.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		4E1DFBE01220C69E000EE50E /* DetailViewCompanyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1DFBDE1220C69E000EE50E /* DetailViewCompanyController.m */; };
@@ -44,11 +51,6 @@
 		4E70D43A1221924E009DBBC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4391221924E009DBBC8 /* Default.png */; };
 		4E70D4A312219A94009DBBC8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4A212219A94009DBBC8 /* icon.png */; };
 		4E71301E12209C19000B44E5 /* OverlayListObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E71301D12209C19000B44E5 /* OverlayListObjects.m */; };
-		6F7CCBC212218F290072A624 /* agency1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBBE12218F290072A624 /* agency1.png */; };
-		6F7CCBC312218F290072A624 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBBF12218F290072A624 /* Default.png */; };
-		6F7CCBC412218F290072A624 /* paypal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBC012218F290072A624 /* paypal_logo.png */; };
-		6F7CCBC512218F290072A624 /* snailmail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBC112218F290072A624 /* snailmail.jpg */; };
-		6F7CCBCC12218F400072A624 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBCA12218F400072A624 /* ListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,13 @@
 		1D3623250D0F684500981E51 /* iRecoveryWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRecoveryWatchAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iRecoveryWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRecoveryWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		27399E421221A1A500608494 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		27399E441221A45100608494 /* MapTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MapTab.png; path = Resources/MapTab.png; sourceTree = SOURCE_ROOT; };
+		27399E451221A45100608494 /* MapTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MapTab@2x.png"; path = "Resources/MapTab@2x.png"; sourceTree = SOURCE_ROOT; };
+		27399E461221A45100608494 /* RequestTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RequestTab.png; path = Resources/RequestTab.png; sourceTree = SOURCE_ROOT; };
+		27399E471221A45100608494 /* RequestTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RequestTab@2x.png"; path = "Resources/RequestTab@2x.png"; sourceTree = SOURCE_ROOT; };
+		27399E481221A45100608494 /* TickerTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TickerTab.png; path = Resources/TickerTab.png; sourceTree = SOURCE_ROOT; };
+		27399E491221A45100608494 /* TickerTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TickerTab@2x.png"; path = "Resources/TickerTab@2x.png"; sourceTree = SOURCE_ROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,11 +122,6 @@
 		4E70D4A212219A94009DBBC8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		4E71301C12209C19000B44E5 /* OverlayListObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayListObjects.h; sourceTree = "<group>"; };
 		4E71301D12209C19000B44E5 /* OverlayListObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayListObjects.m; sourceTree = "<group>"; };
-		6F7CCBBE12218F290072A624 /* agency1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agency1.png; sourceTree = "<group>"; };
-		6F7CCBBF12218F290072A624 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		6F7CCBC012218F290072A624 /* paypal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_logo.png; sourceTree = "<group>"; };
-		6F7CCBC112218F290072A624 /* snailmail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snailmail.jpg; sourceTree = "<group>"; };
-		6F7CCBCA12218F400072A624 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListViewController.xib; path = Classes/ListViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iRecoveryWatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iRecoveryWatch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,14 +290,18 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6F7CCBBE12218F290072A624 /* agency1.png */,
-				6F7CCBBF12218F290072A624 /* Default.png */,
-				6F7CCBC012218F290072A624 /* paypal_logo.png */,
-				6F7CCBC112218F290072A624 /* snailmail.jpg */,
+				27399E441221A45100608494 /* MapTab.png */,
+				27399E451221A45100608494 /* MapTab@2x.png */,
+				27399E461221A45100608494 /* RequestTab.png */,
+				27399E471221A45100608494 /* RequestTab@2x.png */,
+				27399E481221A45100608494 /* TickerTab.png */,
+				27399E491221A45100608494 /* TickerTab@2x.png */,
+				27399E421221A1A500608494 /* Default@2x.png */,
+				4E70D4A212219A94009DBBC8 /* icon.png */,
+				4E70D4391221924E009DBBC8 /* Default.png */,
 				0018D4B0122187AD00244DE1 /* TagBackground.png */,
 				4E1DFD1B1220E564000EE50E /* agencies.plist */,
 				4E1DFC281220CD7D000EE50E /* agency.png */,
-				6F7CCBCA12218F400072A624 /* ListViewController.xib */,
 				4E1DFBDF1220C69E000EE50E /* DetailViewCompanyController.xib */,
 				00EEE5FB12208D1000F722F7 /* MapViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -364,11 +372,15 @@
 				4E1DFC291220CD7D000EE50E /* agency.png in Resources */,
 				4E1DFD1C1220E564000EE50E /* agencies.plist in Resources */,
 				0018D4B1122187AD00244DE1 /* TagBackground.png in Resources */,
-				6F7CCBC212218F290072A624 /* agency1.png in Resources */,
-				6F7CCBC312218F290072A624 /* Default.png in Resources */,
-				6F7CCBC412218F290072A624 /* paypal_logo.png in Resources */,
-				6F7CCBC512218F290072A624 /* snailmail.jpg in Resources */,
-				6F7CCBCC12218F400072A624 /* ListViewController.xib in Resources */,
+				4E70D43A1221924E009DBBC8 /* Default.png in Resources */,
+				4E70D4A312219A94009DBBC8 /* icon.png in Resources */,
+				27399E431221A1A500608494 /* Default@2x.png in Resources */,
+				27399E4A1221A45100608494 /* MapTab.png in Resources */,
+				27399E4B1221A45100608494 /* MapTab@2x.png in Resources */,
+				27399E4C1221A45100608494 /* RequestTab.png in Resources */,
+				27399E4D1221A45100608494 /* RequestTab@2x.png in Resources */,
+				27399E4E1221A45100608494 /* TickerTab.png in Resources */,
+				27399E4F1221A45100608494 /* TickerTab@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

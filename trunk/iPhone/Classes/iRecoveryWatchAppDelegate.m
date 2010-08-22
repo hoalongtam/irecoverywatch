@@ -49,10 +49,7 @@ settingsViewController,recipientArray,currentLocation;
 	
 	tagsViewController = [[TagsViewController alloc] init];
 	tagsViewController.title=@"Ticker";
-	
-	
-	//tagsViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
-    // tagsViewController.view.backgroundColor = [UIColor redColor];
+	tagsViewController.tabBarItem.image = [UIImage imageNamed:@"TickerTab.png"];
     
 	//Create UINavigationController for tagsView
 	tagsViewNavController= [[UINavigationController alloc]initWithRootViewController:tagsViewController];
@@ -67,10 +64,9 @@ settingsViewController,recipientArray,currentLocation;
 	
 	mapViewController = [[MapViewController alloc] init];
 	mapViewController.title=@"Map";
-	
-	
-	//mapViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
-    //mapViewController.view.backgroundColor = [UIColor redColor];
+  mapViewController.tabBarItem.image = [UIImage imageNamed:@"MapTab.png"];
+  
+	  //mapViewController.view.backgroundColor = [UIColor redColor];
     
 	//Create UINavigationController for tagsView
 	
@@ -81,7 +77,8 @@ settingsViewController,recipientArray,currentLocation;
 	
 	listViewController = [[ListViewController alloc] init];
 	listViewController.title=@"Request";
-	
+	listViewController.tabBarItem.image = [UIImage imageNamed:@"RequestTab.png"];
+  
 	
 	//listViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
     //listViewController.view.backgroundColor = [UIColor redColor];
