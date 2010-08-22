@@ -155,6 +155,7 @@ settingsViewController,recipientArray,currentLocation;
 		NSNumber *logitude = [item objectForKey:@"LON"];
 		NSNumber *latitude = [item objectForKey:@"LAT"];
 		NSString *primaryAgency = [item objectForKey:@"FUNDING_AGCY"];
+	    NSString *awardKey = [item objectForKey:@"AWD_KEY"];
 		
 		//NSLog(@"Stop here");
 		
@@ -164,7 +165,8 @@ settingsViewController,recipientArray,currentLocation;
 													   totaljobs:totalJobs 
 														logitude:logitude 
 														latitude:latitude 
-												   primaryAgency:primaryAgency];
+												   primaryAgency:primaryAgency
+														awardKey:awardKey];
 	
 	
 	 [recipientReturnList	addObject:recipient];
