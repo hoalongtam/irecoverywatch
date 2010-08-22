@@ -11,8 +11,10 @@
 
 @interface DetailViewCompanyController : UIViewController <UIWebViewDelegate> {
 	IBOutlet UIWebView *webView;
+	NSString *strKey;
 }
 
 @property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, retain) NSString *strKey;
 
 @end
