@@ -45,38 +45,55 @@ settingsViewController,recipientArray,currentLocation;
 
 	
 	//======================= TickerView ==============================================
-     tickerViewController = [[TickerViewController alloc] init];
+	
+	
+	tickerViewController = [[TickerViewController alloc] init];
 	tickerViewController.title=@"Ticker";
+	
+	
 	//tickerViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
-   // tickerViewController.view.backgroundColor = [UIColor redColor];
+    // tickerViewController.view.backgroundColor = [UIColor redColor];
     
 	//Create UINavigationController for tickerView
 	tickerViewNavController= [[UINavigationController alloc]initWithRootViewController:tickerViewController];
 	
 	UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(location)];
 	tickerViewController.navigationItem.rightBarButtonItem=barButton;
-    
+   
+	
+	
 	//======================= MapsView ==============================================
-    mapViewController = [[MapViewController alloc] init];
+  
+	
+	mapViewController = [[MapViewController alloc] init];
 	mapViewController.title=@"Map";
+	
+	
 	//mapViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
     //mapViewController.view.backgroundColor = [UIColor redColor];
     
 	//Create UINavigationController for tickerView
+	
 	UINavigationController	*mapViewNavController= [[UINavigationController alloc]initWithRootViewController:mapViewController];
 	
 	//======================= Request ==============================================
-    listViewController = [[ListViewController alloc] init];
+   
+	
+	listViewController = [[ListViewController alloc] init];
 	listViewController.title=@"Request";
+	
+	
 	//listViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
     //listViewController.view.backgroundColor = [UIColor redColor];
     
 	//Create UINavigationController for tickerView
+	
 	UINavigationController	*listViewNavController= [[UINavigationController alloc]initWithRootViewController:listViewController];
 	
 	
 	// Add all the view controllers as children of the tab bar controller
-    tabBarController.viewControllers = [NSArray arrayWithObjects:tickerViewNavController,mapViewNavController,listViewNavController, nil];
+   
+	tabBarController.viewControllers = [NSArray arrayWithObjects:tickerViewNavController,mapViewNavController,listViewNavController, nil];
 
 	[tickerViewNavController release];
 	[mapViewNavController release];
@@ -96,14 +113,19 @@ settingsViewController,recipientArray,currentLocation;
 	
 	static NSString *baseURL=@"http://irecoverywatch.appspot.com/query?";
 	//NSString *baseURL= [NSString stringWithString:@"http://irecoverywatch.appspot.com/query?lat=37.3&lon=-121.83&tol=5"];
+	
+	
 	NSString *requestURL=[baseURL stringByAppendingString:_queryString];
 	
 	
 	NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
 	
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	
+	
 	[jsonResponseData appendData:data];	
 	recipientArray = [[NSMutableArray alloc] init];
+	
 	self.recipientArray = [self getRecipientsData:jsonResponseData];
 	
 	
@@ -146,15 +168,20 @@ settingsViewController,recipientArray,currentLocation;
 														logitude:logitude 
 														latitude:latitude 
 												   primaryAgency:primaryAgency];
-	// [companyId release];
+	
+	
+	 [recipientReturnList	addObject:recipient];
+
+	 //DO NOT RELEASE THESE...
+	 
+	 // [companyId release];
 	 //[companyName release];
 	 //[totalAmount release];
 	 //[totalJobs release];
 	 //[logitude release];
 	 //[latitude release];
 	 //[primaryAgency release];
-	 [recipientReturnList	addObject:recipient];
-	// [recipient release];
+		// [recipient release];
 	}
 	
 	
@@ -163,14 +190,22 @@ settingsViewController,recipientArray,currentLocation;
 	
 }
 
+//For Synchronous connection we may need all the delegate methods down here
+
 #pragma mark NSURLConnection Delegate methods
+
+
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
 	[jsonResponseData appendData:data];	
 }
+
+
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
 	
 	[jsonResponseData setLength:0];	
 }
+
+
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
 	
 }
@@ -185,6 +220,9 @@ settingsViewController,recipientArray,currentLocation;
 	settingsViewController= [[SettingsViewController alloc]init];
 	[tickerViewNavController pushViewController:settingsViewController animated:YES];
 	[settingsViewController release];
+
+	
+	
 	/*
 	UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Bar button Message" message:@"implement location" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];		
 	 [alertView show];
@@ -194,10 +232,12 @@ settingsViewController,recipientArray,currentLocation;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    /*
+    
+	/*
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
+
 }
 
 
