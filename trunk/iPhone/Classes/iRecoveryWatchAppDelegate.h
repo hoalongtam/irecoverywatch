@@ -12,6 +12,7 @@
 @class 	MapViewController;
 @class  ListViewController;
 @class  SettingsViewController;
+@class  CurrentLoc;
 
 
 
@@ -24,12 +25,14 @@
 	TagsViewController *tagsViewController;
 	MapViewController *mapViewController;
 	ListViewController *listViewController;
-	UINavigationController	*tickerViewNavController;
 	SettingsViewController *settingsViewController;
+	UINavigationController *tickerViewNavController; 
 	
 	//Data
 	
 	NSMutableData *jsonResponseData;
+	NSMutableArray *recipientArray;
+	CurrentLoc *currentLocation;
 	
 	
 }
@@ -40,8 +43,9 @@
 @property (nonatomic, retain) TagsViewController *tagsViewController;
 @property (nonatomic, retain) MapViewController *mapViewController;
 @property (nonatomic, retain) ListViewController *listViewController;
-@property (nonatomic, retain) UINavigationController	*tickerViewNavController;
 @property (nonatomic, retain) SettingsViewController *settingsViewController;
+@property (nonatomic, retain) NSMutableArray *recipientArray;
+@property (nonatomic, retain) CurrentLoc *currentLocation;
 
 -(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate;
 -(NSMutableArray *) getRecipientsData:(NSMutableData *) _responseData;
