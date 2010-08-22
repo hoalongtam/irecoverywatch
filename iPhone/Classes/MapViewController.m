@@ -38,8 +38,6 @@
 
 - (void)viewDidLoad {
 	//mapView = (MKMapView*)self.view;
-	
-	//[self.view addSubview:mapView];
 
 	[mapView setZoomEnabled:YES];
 	[mapView setMapType:MKMapTypeStandard];
@@ -47,6 +45,8 @@
     [mapView setShowsUserLocation:YES];
 		
 	mapView.delegate=self;	
+	
+	//cLoc = [[CurrentLoc alloc]init];
 	
 	[self showMap];
 }
@@ -80,16 +80,16 @@
 	[newEntry release];
 	
 	[self doAnnotations:array];
+	[self doOverlays:array];
 	[array release];
 }
 
-/*
+
 - (MKOverlayView *)mapView:(MKMapView *)mapViewx viewForOverlay:(id <MKOverlay>)overlay
 {
-	/*
-	MKPinAnnotationView *annView;
-	 
-	if (annotation == mapViewx.userLocation)
+	MKOverlayView *ovlView = nil;
+	/* 
+	if (overlay == mapViewx.userLocation)
 	{
 		[mapView setCenterCoordinate:mapView.userLocation.coordinate animated:TRUE];
 		// We can return nil to let the MapView handle the default annotation view (blue dot):
@@ -128,9 +128,11 @@
 		}
 		
 	}
+	*/
 	
+	return ovlView;
 }
-*/
+
 - (MKAnnotationView *) mapView:(MKMapView *)mapViewx viewForAnnotation:(id <MKAnnotation>) annotation
 {
 	MKPinAnnotationView *annView; //=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
@@ -170,13 +172,62 @@
 			annView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
 			annView.pinColor = MKPinAnnotationColorGreen;
 			
+			//UITableView *detView = [[UITableView alloc] init];
+			//annView.rightCalloutAccessoryView = detView;
+			
+			UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+			[button addTarget:self 
+					   action:@selector(infoButton:)
+			forControlEvents:UIControlEventTouchDown];
+			annView.rightCalloutAccessoryView = button;
+			
+			//UIImage *agency = [[UIImage alloc]initWithContentsOfFile:@"/Work/iPhoneTouchPad/iOSDevCamp/irecoverywatch/iPhone/agency.png"];
+			UIImage *agency = [UIImage imageNamed:@"agency.png"];
+			
+			UIImageView *agencyImageView = [[UIImageView alloc] initWithImage:agency];
+			annView.leftCalloutAccessoryView = agencyImageView;
+			[agencyImageView release];
+			//[agency release];
 			annView.canShowCallout = TRUE;
 		}
-		
 	}
 	
 	annView.animatesDrop=TRUE;
 	return annView;
+}
+
+- (void)infoButton:(id)sender {
+	DetailViewCompanyController *detailView = [[DetailViewCompanyController alloc] init];
+	
+	[[self navigationController] pushViewController:detailView animated:YES];
+	
+	[detailView release];
+}
+
+- (void)doOverlays:(NSMutableArray *)recoveryData {
+	NSMutableArray *overlayList = [[NSMutableArray alloc] init];
+	// create loop here if necessary
+	for (AwardData *entryToAnnotate in recoveryData) {
+		OverlayListObjects *newOverlay = [OverlayListObjects new];
+		CLLocationCoordinate2D tempCoordinate;
+		tempCoordinate.latitude = entryToAnnotate.latitude;  // set latitude to required value
+		tempCoordinate.longitude =  entryToAnnotate.longitude; // set longitude to required value
+		//[newOverlay setCoordinate: tempCoordinate];
+		//[newOverlay setTitle: entryToAnnotate.CompanyName]; // or whatever
+		//[newOverlay setSubtitle: [NSString stringWithFormat:@"%f", entryToAnnotate.amount]]; // or whatever
+		//MKMapRect rect = MKMapRectMake(0, 0, 100, 100);
+		//[newOverlay setBoundingMapRect:MKMapRectMake(0, 0, 100, 100)];
+		[overlayList addObject: newOverlay];
+		[newOverlay release];
+	}
+	// end loop here if looped
+	[mapView addOverlays: overlayList];
+	
+	[overlayList release];
+}
+
+- (void)mapView:(MKMapView *)mapViewx didAddOverlayViews:(NSArray *)overlayViews {
+	NSLog(@"Overlays: %@", [overlayViews count]);
 }
 
 - (void)doAnnotations:(NSMutableArray *)recoveryData {
