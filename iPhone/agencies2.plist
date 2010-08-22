@@ -1,0 +1,309 @@
+<array>
+ <dict>
+  <key>agencyID</key>
+  <string>0</string>
+  <key>agencyName</key>
+  <string>Department of State</string>
+  <key>agencyURL</key>
+  <string>http://www.state.gov/ </string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>1</string>
+  <key>agencyName</key>
+  <string>Department of the Interior</string>
+  <key>agencyURL</key>
+  <string>http://www.doi.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>2</string>
+  <key>agencyName</key>
+  <string>Department of the Treasury</string>
+  <key>agencyURL</key>
+  <string>http://www.ustreas.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>3</string>
+  <key>agencyName</key>
+  <string>Department of Transportation</string>
+  <key>agencyURL</key>
+  <string>http://www.dot.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>4</string>
+  <key>agencyName</key>
+  <string>Department of Veterans Affairs</string>
+  <key>agencyURL</key>
+  <string>http://www.va.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>5</string>
+  <key>agencyName</key>
+  <string>Environmental Protection Agency</string>
+  <key>agencyURL</key>
+  <string>http://www.epa.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>6</string>
+  <key>agencyName</key>
+  <string>Federal Communications Commission</string>
+  <key>agencyURL</key>
+  <string>http://www.fcc.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>7</string>
+  <key>agencyName</key>
+  <string>General Services Administration</string>
+  <key>agencyURL</key>
+  <string>http://www.gsa.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>8</string>
+  <key>agencyName</key>
+  <string>National Aeronautics and Space Adminstration</string>
+  <key>agencyURL</key>
+  <string>http://www.nasa.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>9</string>
+  <key>agencyName</key>
+  <string>National Endowment for the Arts</string>
+  <key>agencyURL</key>
+  <string>http://www.nea.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>10</string>
+  <key>agencyName</key>
+  <string>National Science Foundation</string>
+  <key>agencyURL</key>
+  <string>http://www.nsf.gov</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>11</string>
+  <key>agencyName</key>
+  <string>US Army Corps of Engineers</string>
+  <key>agencyURL</key>
+  <string>http://http://www.usace.army.mil/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>12</string>
+  <key>agencyName</key>
+  <string>Social Security Administration</string>
+  <key>agencyURL</key>
+  <string>http://www.ssa.gov </string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>13</string>
+  <key>agencyName</key>
+  <string>Smithsonian Institution</string>
+  <key>agencyURL</key>
+  <string>http://www.si.edu/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>14</string>
+  <key>agencyName</key>
+  <string>Small Business Administration</string>
+  <key>agencyURL</key>
+  <string>http://www.sba.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>15</string>
+  <key>agencyName</key>
+  <string>Railroad Retirement Board</string>
+  <key>agencyURL</key>
+  <string>http://www.rrb.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>16</string>
+  <key>agencyName</key>
+  <string>Department of Labor</string>
+  <key>agencyURL</key>
+  <string>http://www.dol.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>17</string>
+  <key>agencyName</key>
+  <string>Department of Justice</string>
+  <key>agencyURL</key>
+  <string>http://www.justice.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>18</string>
+  <key>agencyName</key>
+  <string>Department of Housing and Urban Development</string>
+  <key>agencyURL</key>
+  <string>http://www.hud.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>19</string>
+  <key>agencyName</key>
+  <string>Department of Homeland Security</string>
+  <key>agencyURL</key>
+  <string>http://www.dhs.gov/ </string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>20</string>
+  <key>agencyName</key>
+  <string>Department of Health and Human Services</string>
+  <key>agencyURL</key>
+  <string>http://www.hhs.gov/ </string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>21</string>
+  <key>agencyName</key>
+  <string>Department of Energy</string>
+  <key>agencyURL</key>
+  <string>http://www.energy.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>22</string>
+  <key>agencyName</key>
+  <string>Department of Education</string>
+  <key>agencyURL</key>
+  <string>http://www.ed.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>23</string>
+  <key>agencyName</key>
+  <string>Department of Defense--Military</string>
+  <key>agencyURL</key>
+  <string>http://www.defense.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>24</string>
+  <key>agencyName</key>
+  <string>Department of Commerce</string>
+  <key>agencyURL</key>
+  <string>http://www.commerce.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>25</string>
+  <key>agencyName</key>
+  <string>Department of Agriculture</string>
+  <key>agencyURL</key>
+  <string>http://www.usda.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>26</string>
+  <key>agencyName</key>
+  <string>Corporation for National and Community Service</string>
+  <key>agencyURL</key>
+  <string>http://www.nationalservice.gov/ </string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array><array>
+ <dict>
+  <key>agencyID</key>
+  <string>27</string>
+  <key>agencyName</key>
+  <string>Agency for International Development</string>
+  <key>agencyURL</key>
+  <string>http://www.usaid.gov/</string>
+  <key>agencyIcon</key>
+  <string>TODO.PNG</string>
+ </dict>
+</array>
