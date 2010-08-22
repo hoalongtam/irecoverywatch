@@ -42,6 +42,7 @@
 		4E1DFC291220CD7D000EE50E /* agency.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DFC281220CD7D000EE50E /* agency.png */; };
 		4E1DFD1C1220E564000EE50E /* agencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DFD1B1220E564000EE50E /* agencies.plist */; };
 		4E70D43A1221924E009DBBC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4391221924E009DBBC8 /* Default.png */; };
+		4E70D4A312219A94009DBBC8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4A212219A94009DBBC8 /* icon.png */; };
 		4E71301E12209C19000B44E5 /* OverlayListObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E71301D12209C19000B44E5 /* OverlayListObjects.m */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		4E1DFC281220CD7D000EE50E /* agency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agency.png; sourceTree = "<group>"; };
 		4E1DFD1B1220E564000EE50E /* agencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = agencies.plist; sourceTree = "<group>"; };
 		4E70D4391221924E009DBBC8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4E70D4A212219A94009DBBC8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		4E71301C12209C19000B44E5 /* OverlayListObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayListObjects.h; sourceTree = "<group>"; };
 		4E71301D12209C19000B44E5 /* OverlayListObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayListObjects.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iRecoveryWatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iRecoveryWatch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E70D4A212219A94009DBBC8 /* icon.png */,
 				4E70D4391221924E009DBBC8 /* Default.png */,
 				0018D4B0122187AD00244DE1 /* TagBackground.png */,
 				4E1DFD1B1220E564000EE50E /* agencies.plist */,
@@ -349,6 +352,7 @@
 				4E1DFD1C1220E564000EE50E /* agencies.plist in Resources */,
 				0018D4B1122187AD00244DE1 /* TagBackground.png in Resources */,
 				4E70D43A1221924E009DBBC8 /* Default.png in Resources */,
+				4E70D4A312219A94009DBBC8 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

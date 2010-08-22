@@ -24,7 +24,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-	NSString *urlAddress = @"http://www.google.com";
+	NSString *urlAddress = @"http://www.recovery.gov";
 	
 	//Create a URL object.
 	NSURL *url = [NSURL URLWithString:urlAddress];
