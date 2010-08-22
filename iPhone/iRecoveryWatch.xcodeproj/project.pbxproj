@@ -44,6 +44,11 @@
 		4E70D43A1221924E009DBBC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4391221924E009DBBC8 /* Default.png */; };
 		4E70D4A312219A94009DBBC8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D4A212219A94009DBBC8 /* icon.png */; };
 		4E71301E12209C19000B44E5 /* OverlayListObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E71301D12209C19000B44E5 /* OverlayListObjects.m */; };
+		6F7CCBC212218F290072A624 /* agency1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBBE12218F290072A624 /* agency1.png */; };
+		6F7CCBC312218F290072A624 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBBF12218F290072A624 /* Default.png */; };
+		6F7CCBC412218F290072A624 /* paypal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBC012218F290072A624 /* paypal_logo.png */; };
+		6F7CCBC512218F290072A624 /* snailmail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBC112218F290072A624 /* snailmail.jpg */; };
+		6F7CCBCC12218F400072A624 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CCBCA12218F400072A624 /* ListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +113,11 @@
 		4E70D4A212219A94009DBBC8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		4E71301C12209C19000B44E5 /* OverlayListObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayListObjects.h; sourceTree = "<group>"; };
 		4E71301D12209C19000B44E5 /* OverlayListObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayListObjects.m; sourceTree = "<group>"; };
+		6F7CCBBE12218F290072A624 /* agency1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agency1.png; sourceTree = "<group>"; };
+		6F7CCBBF12218F290072A624 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6F7CCBC012218F290072A624 /* paypal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_logo.png; sourceTree = "<group>"; };
+		6F7CCBC112218F290072A624 /* snailmail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snailmail.jpg; sourceTree = "<group>"; };
+		6F7CCBCA12218F400072A624 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListViewController.xib; path = Classes/ListViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iRecoveryWatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iRecoveryWatch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,11 +286,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E70D4A212219A94009DBBC8 /* icon.png */,
-				4E70D4391221924E009DBBC8 /* Default.png */,
+				6F7CCBBE12218F290072A624 /* agency1.png */,
+				6F7CCBBF12218F290072A624 /* Default.png */,
+				6F7CCBC012218F290072A624 /* paypal_logo.png */,
+				6F7CCBC112218F290072A624 /* snailmail.jpg */,
 				0018D4B0122187AD00244DE1 /* TagBackground.png */,
 				4E1DFD1B1220E564000EE50E /* agencies.plist */,
 				4E1DFC281220CD7D000EE50E /* agency.png */,
+				6F7CCBCA12218F400072A624 /* ListViewController.xib */,
 				4E1DFBDF1220C69E000EE50E /* DetailViewCompanyController.xib */,
 				00EEE5FB12208D1000F722F7 /* MapViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -351,8 +364,11 @@
 				4E1DFC291220CD7D000EE50E /* agency.png in Resources */,
 				4E1DFD1C1220E564000EE50E /* agencies.plist in Resources */,
 				0018D4B1122187AD00244DE1 /* TagBackground.png in Resources */,
-				4E70D43A1221924E009DBBC8 /* Default.png in Resources */,
-				4E70D4A312219A94009DBBC8 /* icon.png in Resources */,
+				6F7CCBC212218F290072A624 /* agency1.png in Resources */,
+				6F7CCBC312218F290072A624 /* Default.png in Resources */,
+				6F7CCBC412218F290072A624 /* paypal_logo.png in Resources */,
+				6F7CCBC512218F290072A624 /* snailmail.jpg in Resources */,
+				6F7CCBCC12218F400072A624 /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
