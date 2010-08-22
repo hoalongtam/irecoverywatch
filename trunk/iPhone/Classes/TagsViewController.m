@@ -103,7 +103,8 @@
 		TagView *tagView = [[TagView alloc] initWithTitle: recipient.companyName
                                                amount: [recipient.totalAmount floatValue]
                                       foregroundColor: [UIColor whiteColor]
-                                      backgroundColor: backgroundColor];
+                                      backgroundColor: backgroundColor
+                                       viewController: self];
 		[tagView sizeToFit];
 		
 		TagStripView *strip = [stripViews objectAtIndex: i % STRIP_COUNT];

@@ -5,6 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class TagsViewController;
 
 @interface TagView : UIView {
   NSString *_title;
@@ -15,11 +16,13 @@
   CGSize _amountSize;
   UIColor *_foregroundColor;
   UIColor *_backgroundColor;
+  TagsViewController *viewController;
 }
 
 - (id) initWithTitle: (NSString *)title 
               amount:(float)amount
      foregroundColor: (UIColor *)foregroundColor
-     backgroundColor: (UIColor *)backgroundColor;
+     backgroundColor: (UIColor *)backgroundColor
+      viewController: (TagsViewController *)aViewController;
 
 @end
