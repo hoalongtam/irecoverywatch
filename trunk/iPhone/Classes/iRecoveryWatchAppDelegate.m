@@ -7,7 +7,7 @@
 //
 
 #import "iRecoveryWatchAppDelegate.h"
-#import "TickerViewController.h"
+#import "TagsViewController.h"
 #import "MapViewController.h"
 #import "ListViewController.h"
 #import "SettingsViewController.h"
@@ -20,7 +20,7 @@
 @implementation iRecoveryWatchAppDelegate
 
 @synthesize window;
-@synthesize tabBarController,tickerViewController,tagsViewController,mapViewController,listViewController,
+@synthesize tabBarController,tagsViewController,mapViewController,listViewController,
 settingsViewController,recipientArray,currentLocation;
 
 
@@ -35,7 +35,7 @@ settingsViewController,recipientArray,currentLocation;
 	
 	currentLocation = [[CurrentLoc alloc] initWithLongitude:37.37688 latitude:-121.9214];
 	
-	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=1",[currentLocation latitude],[currentLocation longitude]];
+	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=5",[currentLocation latitude],[currentLocation longitude]];
 	
 	[self getJSONData:queryString urlDelegate:self];
 		
@@ -44,21 +44,21 @@ settingsViewController,recipientArray,currentLocation;
 	tabBarController = [[UITabBarController alloc] init];
 
 	
-	//======================= TickerView ==============================================
+	//======================= TagsView ==============================================
 	
 	
-	tickerViewController = [[TickerViewController alloc] init];
-	tickerViewController.title=@"Ticker";
+	tagsViewController = [[TagsViewController alloc] init];
+	tagsViewController.title=@"Ticker";
 	
 	
-	//tickerViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
-    // tickerViewController.view.backgroundColor = [UIColor redColor];
+	//tagsViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
+    // tagsViewController.view.backgroundColor = [UIColor redColor];
     
-	//Create UINavigationController for tickerView
-	tickerViewNavController= [[UINavigationController alloc]initWithRootViewController:tickerViewController];
+	//Create UINavigationController for tagsView
+	tagsViewNavController= [[UINavigationController alloc]initWithRootViewController:tagsViewController];
 	
 	UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(location)];
-	tickerViewController.navigationItem.rightBarButtonItem=barButton;
+	tagsViewController.navigationItem.rightBarButtonItem=barButton;
    
 	
 	
@@ -72,7 +72,7 @@ settingsViewController,recipientArray,currentLocation;
 	//mapViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
     //mapViewController.view.backgroundColor = [UIColor redColor];
     
-	//Create UINavigationController for tickerView
+	//Create UINavigationController for tagsView
 	
 	UINavigationController	*mapViewNavController= [[UINavigationController alloc]initWithRootViewController:mapViewController];
 	
@@ -86,16 +86,16 @@ settingsViewController,recipientArray,currentLocation;
 	//listViewController.tabBarItem.image = [UIImage imageNamed:@"faves.png"];
     //listViewController.view.backgroundColor = [UIColor redColor];
     
-	//Create UINavigationController for tickerView
+	//Create UINavigationController for tagsView
 	
 	UINavigationController	*listViewNavController= [[UINavigationController alloc]initWithRootViewController:listViewController];
 	
 	
 	// Add all the view controllers as children of the tab bar controller
    
-	tabBarController.viewControllers = [NSArray arrayWithObjects:tickerViewNavController,mapViewNavController,listViewNavController, nil];
+	tabBarController.viewControllers = [NSArray arrayWithObjects:tagsViewNavController,mapViewNavController,listViewNavController, nil];
 
-	[tickerViewNavController release];
+	[tagsViewNavController release];
 	[mapViewNavController release];
 	[listViewNavController release];
 	
@@ -218,7 +218,7 @@ settingsViewController,recipientArray,currentLocation;
 
 -(void) location{
 	settingsViewController= [[SettingsViewController alloc]init];
-	[tickerViewNavController pushViewController:settingsViewController animated:YES];
+	[tagsViewNavController pushViewController:settingsViewController animated:YES];
 	[settingsViewController release];
 
 	
@@ -283,11 +283,11 @@ settingsViewController,recipientArray,currentLocation;
 
 - (void)dealloc {
 	
-	[tickerViewController release];
+	[tagsViewController release];
 	[mapViewController release];
 	[listViewController release];
 	[settingsViewController release];
-	[tickerViewNavController release];
+	[tagsViewNavController release];
 	
     [window release];
     [super dealloc];
