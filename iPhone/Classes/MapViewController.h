@@ -15,9 +15,10 @@
 @class AwardData;
 
 @interface MapViewController : UIViewController <MKReverseGeocoderDelegate, MKMapViewDelegate> {
-	MKMapView			*mapView;
+	IBOutlet MKMapView			*mapView;
 	MKReverseGeocoder	*geoCoder;
 }
+
 
 - (void)showMap;
 - (void)doAnnotations:(NSMutableArray *)recoveryData;
