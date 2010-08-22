@@ -7,6 +7,7 @@
 //
 
 #import "TickerViewController.h"
+#import "iRecoveryWatchAppDelegate.h"
 
 
 @implementation TickerViewController
@@ -27,12 +28,33 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+  
 }
-*/
+
+
+#pragma mark NSURLConnection Delegate methods
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+	[jsonResponseData appendData:data];	
+}
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+	
+	[jsonResponseData setLength:0];	
+}
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+}
+
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection{
+	
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	 NSMutableArray *recipientArray = [delegate getRecipientsData:jsonResponseData];
+	NSLog(@"recipient Array %@",recipientArray);
+	
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

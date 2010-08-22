@@ -16,15 +16,20 @@
 
 
 @interface iRecoveryWatchAppDelegate : NSObject <UIApplicationDelegate> {
-  UIWindow *window;
-  
-  UITabBarController *tabBarController;
-  TickerViewController *tickerViewController;
-  TagsViewController *tagsViewController;
-  MapViewController *mapViewController;
-  ListViewController *listViewController;
-  UINavigationController	*tickerViewNavController;
-  SettingsViewController *settingsViewController;
+    UIWindow *window;
+	
+	// AllViewControllers
+	UITabBarController *tabBarController;
+    TickerViewController *tickerViewController;
+	TagsViewController *tagsViewController;
+	MapViewController *mapViewController;
+	ListViewController *listViewController;
+	UINavigationController	*tickerViewNavController;
+	SettingsViewController *settingsViewController;
+	
+	//Data
+	
+	NSMutableData *jsonResponseData;
 	
 	
 }
@@ -38,6 +43,8 @@
 @property (nonatomic, retain) UINavigationController	*tickerViewNavController;
 @property (nonatomic, retain) SettingsViewController *settingsViewController;
 
+-(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate;
+-(NSMutableArray *) getRecipientsData:(NSMutableData *) _responseData;
 
 @end
 

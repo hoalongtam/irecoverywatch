@@ -21,7 +21,7 @@
 	
 }
 
-- (id) initWithCompnayId:(NSString *) _companyId companyName:(NSString *) _companyName totalAmount:(NSNumber *) _totalAmount
+- (id) initWithCompnayId:(NSNumber *) _companyId companyName:(NSString *) _companyName totalAmount:(NSNumber *) _totalAmount
 			   totaljobs: (NSNumber *)_totaljobs logitude:(NSNumber *) _logitude latitude:(NSNumber *) _latitude primaryAgency:(NSString *)_primaryAgency{
     if (self= [super init]) {
 		
@@ -32,7 +32,7 @@
 	self.latitude=_latitude;
 	self.logitude=_logitude;
 	self.primaryAgency=_primaryAgency;
-    }
+			}
 	return self;
 }
 
