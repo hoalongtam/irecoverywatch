@@ -86,15 +86,23 @@ class DetailHandler(webapp.RequestHandler):
         types = {"G" : "Grant", "L" : "Loan", "C" : "Contract"}
         id = db.Key(self.request.get("key"))
         job = Job.get(id)
+        agcy = get_agency_name(job.funding_agency)
         puts = self.response.out.write
         puts("<html><body>")
         puts("<h1>%s</h1><br />" % job.recipient_name)
         puts("<b>Amount: $%.2f</b><p>" % job.amount)
         puts("<b>Award Date: </b>%s<p>" % job.award_date)
         puts("<b>Award Type:</b> %s<p>" % types[job.award_type])
-        puts("<b>Funding agency:</b> %s<p>" % job.funding_agency)
+        puts("<b>Funding agency:</b> %s<p>" % agcy)
         puts("<b>Award description:</b> %s<p>" % job.award_desc)
         puts("</body></html>")
+
+agencies = {}
+
+def get_agency_name(code):
+    if code in agencies:
+        return agencies[code]
+    return "Unknown"
 
 def goodAwd(awd):
     return awd != None and awd.amount != None and awd.amount > 0 and awd.jobs_count != None and awd.jobs_count >= 0
