@@ -17,14 +17,25 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+	NSString *urlAddress = @"http://www.google.com";
+	
+	//Create a URL object.
+	NSURL *url = [NSURL URLWithString:urlAddress];
+	
+	//URL Requst Object
+	NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+	
+	//Load the request in the UIWebView.
+	[webView loadRequest:requestObj];
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,11 +77,19 @@
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+
 }
-
-
+/*
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+	
+	self.wvTutorial = [[WebViewController alloc] initWithNibName:@"WebView" bundle:[NSBundle mainBundle]];
+	
+	[window addSubview:[wvTutorial view]];
+	
+	// Override point for customization after app launch
+	[window makeKeyAndVisible];
+}
+*/
 - (void)dealloc {
     [super dealloc];
 }
@@ -84,7 +103,7 @@
 	 */
 	return self;
 }
-
+/*
 - (void)loadView
 {
 	NSLog(@"loading view");
@@ -109,7 +128,7 @@
 	[aWebView setDelegate:self];
 	//determine the path the to the index.html file in the Resources directory
 	//NSString *filePathString = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-	NSString *filePathString = [NSString stringWithFormat:@"http://www.data.gov"];
+	NSString *filePathString = [NSString stringWithFormat:@"http://www.data.gov/"];
 	//build the URL and the request for the index.html file
 	NSURL *aURL = [NSURL fileURLWithPath:filePathString];
 	NSURLRequest *aRequest = [NSURLRequest requestWithURL:aURL];
@@ -121,8 +140,9 @@
 	
 	[aWebView release];
 	[contentView release];
+ 
 }
-
+*/
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	// Return YES for supported orientations.

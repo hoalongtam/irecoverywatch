@@ -10,7 +10,7 @@
 
 
 @interface DetailViewCompanyController : UIViewController <UIWebViewDelegate> {
-	UIWebView *webView;
+	IBOutlet UIWebView *webView;
 }
 
 @property (nonatomic, retain) UIWebView *webView;

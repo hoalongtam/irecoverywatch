@@ -329,7 +329,7 @@
 	userCoordinate.latitude  = 37.37688;
 	userCoordinate.longitude = -121.9214;
 	
-	mapView.region = MKCoordinateRegionMakeWithDistance(userCoordinate, 2000, 2000); 
+	mapView.region = MKCoordinateRegionMakeWithDistance(userCoordinate, 6000, 6000); 
 	
 	
 	
