@@ -16,14 +16,15 @@
 
 
 @interface iRecoveryWatchAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-	UITabBarController *tabBarController;
-    TickerViewController *tickerViewController;
-	TagsViewController *tagsViewController;
-	MapViewController *mapViewController;
-	ListViewController *listViewController;
-	UINavigationController	*tickerViewNavController;
-	SettingsViewController *settingsViewController;
+  UIWindow *window;
+  
+  UITabBarController *tabBarController;
+  TickerViewController *tickerViewController;
+  TagsViewController *tagsViewController;
+  MapViewController *mapViewController;
+  ListViewController *listViewController;
+  UINavigationController	*tickerViewNavController;
+  SettingsViewController *settingsViewController;
 	
 	
 }

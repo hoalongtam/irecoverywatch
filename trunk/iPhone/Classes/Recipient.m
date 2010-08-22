@@ -32,7 +32,7 @@
 	self.latitude=_latitude;
 	self.logitude=_logitude;
 	self.primaryAgency=_primaryAgency;
-			}
+    }
 	return self;
 }
 
