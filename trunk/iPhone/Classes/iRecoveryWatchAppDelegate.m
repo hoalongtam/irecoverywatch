@@ -35,7 +35,7 @@ settingsViewController,recipientArray,currentLocation;
 	
 	currentLocation = [[CurrentLoc alloc] initWithLongitude:37.37688 latitude:-121.9214];
 	
-	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=5",[currentLocation latitude],[currentLocation longitude]];
+	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=3",[currentLocation latitude],[currentLocation longitude]];
 	
 	[self getJSONData:queryString urlDelegate:self];
 		
@@ -125,7 +125,7 @@ settingsViewController,recipientArray,currentLocation;
 	
 	self.recipientArray = [self getRecipientsData:jsonResponseData];
 	
-	
+	NSLog(@"Total Data Points %d",[recipientArray count]);
 	
 	
 	

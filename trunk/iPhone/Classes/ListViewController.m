@@ -34,7 +34,7 @@
   NSString *url=[NSString stringWithFormat:@"https://pp-recv-money.appspot.com/receivemoney?senderEmail=%@&receiverEmail=%@&amount=%.2f&memo=stimulus", email, @"seller_1282422068_biz@yahoo.com", amount];
   NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request Successful" message:@"Check your email for updates from the Federal Government" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Application Submitted" message:@"Check your email for updates from the Federal Government" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
   [alert show];
   [alert release];
 }
