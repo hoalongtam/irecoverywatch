@@ -7,6 +7,7 @@
 //
 
 #import "TagView.h"
+#import "DetailViewCompanyController.h"
 
 #define X_MARGIN 20
 #define Y_MARGIN 10
@@ -23,11 +24,12 @@
 - (id) initWithTitle: (NSString *)title 
               amount:(float)amount
      foregroundColor: (UIColor *)foregroundColor
-     backgroundColor: (UIColor *)backgroundColor {
+     backgroundColor: (UIColor *)backgroundColor
+      viewController: (TagsViewController *)aViewController {
   if(self = [super init]) {
     _foregroundColor = foregroundColor;
     _backgroundColor = backgroundColor;
-    
+    viewController = aViewController;
     _title = [self smartWrap: title];
     _titleLabel = [[UILabel alloc] initWithFrame: CGRectNull];
     _titleLabel.lineBreakMode =  UILineBreakModeWordWrap;
@@ -126,6 +128,12 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
   [super touchesEnded:touches withEvent:event];
   NSLog(@"TOUCHED! %@", _titleLabel.text);
+  DetailViewCompanyController *detailView = [[DetailViewCompanyController alloc] init];
+	
+	[[viewController navigationController] pushViewController:detailView animated:YES];
+	
+	[detailView release];
+  
 }
 #pragma mark Private Methods
 

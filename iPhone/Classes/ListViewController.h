@@ -21,6 +21,3 @@
 @property (nonatomic, retain) IBOutlet UITextField *amountField;
 @property (nonatomic, retain) IBOutlet UIButton *closeTextFieldButton;
 @end
-
-
-@end
