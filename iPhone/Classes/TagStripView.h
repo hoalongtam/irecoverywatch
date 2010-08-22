@@ -14,11 +14,13 @@
   NSMutableArray *tagViews;
   NSTimer *scrollTimer;
   int _speed;
+  BOOL _reverse;
 }
 
 - (void)addTagView: (TagView *)tagView;
 - (void)calculateLayout;
 
 @property int speed;
+@property BOOL reverse;
 
 @end

@@ -6,12 +6,15 @@
 #import "TagsViewController.h"
 #import "TagStripView.h"
 #import "TagView.h"
+#import "Recipient.h"
+#import "iRecoveryWatchAppDelegate.h"
 
 #define STRIP_COUNT 3
 
 @interface TagsViewController (PrivateMethods)
 
 - (void) calculateLayout;
+- (void) loadData: (NSArray *)items;
 
 @end
 
@@ -44,11 +47,14 @@
 	CGFloat y = 0;
 	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
 		TagStripView *strip = [[TagStripView alloc] initWithFrame:CGRectMake(0, y, w, h)];
-		strip.speed = 1 + (2 + i) % STRIP_COUNT;
+		strip.speed = 2 + (2 + i) % STRIP_COUNT;
+    strip.reverse = (i % 2);
 		[stripViews addObject:strip];
 		[self.view addSubview:strip];
 		y += h;
 	}
+  
+/*
 	for (int i = 0 ; i < 100 ; ++i) {
 		NSString *title;
 		
@@ -81,6 +87,7 @@
 		TagStripView *strip = [stripViews objectAtIndex: i % STRIP_COUNT];
 		[strip addTagView: tagView];
 	}
+ */
 	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
 		TagStripView *strip = [stripViews objectAtIndex: i];
 		[strip calculateLayout];    
@@ -88,7 +95,13 @@
 	
 }
 
-
+- (void) viewDidAppear:(BOOL)animated {
+	
+	NSLog(@"stop here");
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	[self loadData:delegate.recipientArray];
+}  
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -116,5 +129,31 @@
     [super dealloc];
 }
 
+#pragma mark PrivateMethods
+
+- (void) loadData:(NSArray *)items {
+  int i = 0;
+  
+  for (Recipient *recipient in items) {
+		float grayness = 0.6 + (rand() % 40) / 100.0;
+		UIColor *backgroundColor = [UIColor colorWithRed: grayness
+                                               green: grayness
+                                                blue: grayness 
+                                               alpha: 0.2 + (rand() % 60) / 100.0];
+		TagView *tagView = [[TagView alloc] initWithTitle: recipient.companyName
+                                               amount: [recipient.totalAmount floatValue]
+                                      foregroundColor: [UIColor whiteColor]
+                                      backgroundColor: backgroundColor];
+		[tagView sizeToFit];
+		
+		TagStripView *strip = [stripViews objectAtIndex: i % STRIP_COUNT];
+		[strip addTagView: tagView];
+    i++;
+	}
+	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
+		TagStripView *strip = [stripViews objectAtIndex: i];
+		[strip calculateLayout];    
+	}
+}
 
 @end
