@@ -18,6 +18,7 @@
 	NSNumber *logitude;
 	NSNumber *latitude;
 	NSString *primaryAgency;
+	NSString *awardKey;
 
 }
 @property (nonatomic,retain) NSNumber *companyId;
@@ -27,8 +28,10 @@
 @property (nonatomic,retain) NSNumber *logitude;
 @property (nonatomic,retain) NSNumber *latitude;
 @property (nonatomic,retain) NSString *primaryAgency;
+@property (nonatomic,retain) NSString *awardKey;
+
 
 - (id) initWithCompnayId:(NSNumber *) _companyId companyName:(NSString *) _companyName totalAmount:(NSNumber *) _totalAmount
-			   totaljobs: (NSNumber *)_totaljobs logitude:(NSNumber *) _logitude latitude:(NSNumber *) _latitude primaryAgency:(NSString *)_primaryAgency;
+			   totaljobs: (NSNumber *)_totaljobs logitude:(NSNumber *) _logitude latitude:(NSNumber *) _latitude primaryAgency:(NSString *)_primaryAgency  awardKey:(NSString *)_awardKey;
  
 @end

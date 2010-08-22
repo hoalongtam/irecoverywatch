@@ -10,7 +10,7 @@
 
 
 @implementation Recipient
-@synthesize companyId,companyName,totalAmount,totalJobs,logitude,latitude,primaryAgency;
+@synthesize companyId,companyName,totalAmount,totalJobs,logitude,latitude,primaryAgency,awardKey;
 
 -(id) init{
 	
@@ -22,7 +22,7 @@
 }
 
 - (id) initWithCompnayId:(NSNumber *) _companyId companyName:(NSString *) _companyName totalAmount:(NSNumber *) _totalAmount
-			   totaljobs: (NSNumber *)_totaljobs logitude:(NSNumber *) _logitude latitude:(NSNumber *) _latitude primaryAgency:(NSString *)_primaryAgency{
+			   totaljobs: (NSNumber *)_totaljobs logitude:(NSNumber *) _logitude latitude:(NSNumber *) _latitude primaryAgency:(NSString *)_primaryAgency  awardKey:(NSString *)_awardKey{
     if (self= [super init]) {
 		
 	self.companyId=_companyId;
@@ -32,6 +32,7 @@
 	self.latitude=_latitude;
 	self.logitude=_logitude;
 	self.primaryAgency=_primaryAgency;
+		self.awardKey=_awardKey;
 			}
 	return self;
 }
