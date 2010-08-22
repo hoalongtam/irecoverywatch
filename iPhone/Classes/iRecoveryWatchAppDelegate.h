@@ -21,12 +21,11 @@
 	
 	// AllViewControllers
 	UITabBarController *tabBarController;
-    TickerViewController *tickerViewController;
-	TagsViewController *tagsViewController;
+    TagsViewController *tagsViewController;
 	MapViewController *mapViewController;
 	ListViewController *listViewController;
 	SettingsViewController *settingsViewController;
-	UINavigationController *tickerViewNavController; 
+	UINavigationController *tagsViewNavController; 
 	
 	//Data
 	
@@ -39,7 +38,6 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
-@property (nonatomic, retain) TickerViewController *tickerViewController;
 @property (nonatomic, retain) TagsViewController *tagsViewController;
 @property (nonatomic, retain) MapViewController *mapViewController;
 @property (nonatomic, retain) ListViewController *listViewController;

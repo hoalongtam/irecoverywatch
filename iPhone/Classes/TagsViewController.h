@@ -8,7 +8,7 @@
 @class TagStripView;
 
 @interface TagsViewController : UIViewController {
-  NSMutableArray *stripViews;
+	NSMutableArray *stripViews;
 }
 
 @end

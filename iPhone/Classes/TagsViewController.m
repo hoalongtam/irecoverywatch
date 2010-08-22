@@ -1,46 +1,102 @@
-    //
+//
 //  TagsViewController.m
 //  iRecoveryWatch
 //
-//  Created by Muthu on 8/21/10.
-//  Copyright 2010 pubhttp.com. All rights reserved.
-//
 
 #import "TagsViewController.h"
+#import "TagStripView.h"
+#import "TagView.h"
 
+#define STRIP_COUNT 3
+
+@interface TagsViewController (PrivateMethods)
+
+- (void) calculateLayout;
+
+@end
 
 @implementation TagsViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView {
+ }
+ */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+	
+	self.navigationController.toolbar.barStyle = UIBarStyleBlack;
+	
+	self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, 320, 360);
+	
+	UIImageView *backgroundView = [[UIImageView alloc] 
+								   initWithImage: [UIImage imageNamed: @"TagBackground"]];
+	[self.view addSubview: backgroundView];
+	
+	stripViews = [[NSMutableArray alloc] initWithCapacity: STRIP_COUNT];
+	CGFloat w = self.view.frame.size.width;
+	CGFloat h = self.view.frame.size.height / 3;
+	CGFloat y = 0;
+	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
+		TagStripView *strip = [[TagStripView alloc] initWithFrame:CGRectMake(0, y, w, h)];
+		strip.speed = 1 + (2 + i) % STRIP_COUNT;
+		[stripViews addObject:strip];
+		[self.view addSubview:strip];
+		y += h;
+	}
+	for (int i = 0 ; i < 100 ; ++i) {
+		NSString *title;
+		
+		switch(i % 4) {
+			case 0:
+				title = @"Highland Technology Servies";
+				break;
+			case 1:
+				title = @"EBay";
+				break;
+			case 2:
+				title = @"University of California";
+				break;
+			default:
+				title = @"California Department of Conservation";
+				break;
+		}
+		float amount = (rand() % 10000000) / 100.0;
+		float grayness = 0.6 + (rand() % 40) / 100.0;
+		UIColor *backgroundColor = [UIColor colorWithRed: grayness
+												   green: grayness
+													blue: grayness 
+												   alpha: 0.2 + (rand() % 60) / 100.0];
+		TagView *tagView = [[TagView alloc] initWithTitle: title
+												   amount: amount
+										  foregroundColor: [UIColor whiteColor]
+										  backgroundColor: backgroundColor];
+		[tagView sizeToFit];
+		
+		TagStripView *strip = [stripViews objectAtIndex: i % STRIP_COUNT];
+		[strip addTagView: tagView];
+	}
+	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
+		TagStripView *strip = [stripViews objectAtIndex: i];
+		[strip calculateLayout];    
+	}
+	
 }
-*/
+
+
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
