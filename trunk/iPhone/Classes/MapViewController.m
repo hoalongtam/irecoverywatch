@@ -38,15 +38,17 @@
 	
 	//cLoc = [[CurrentLoc alloc]init];
 	
+	NSLog(@"stop here");
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	[self doAnnotations:delegate.recipientArray];
+	
 	[self showMap];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
 	
-	NSLog(@"stop here");
-	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	[self doAnnotations:delegate.recipientArray];
+
 
 	
 	
@@ -264,8 +266,8 @@
 	NSLog(@"doAnnotations recoveryData count = %d",[recoveryData count]);
 	for (Recipient *recipient in recoveryData) {
 		
-		NSLog(@"latitude %f",[[recipient latitude] floatValue]);
-		NSLog(@"logitude %f",[[recipient logitude] floatValue]);
+		NSLog(@"latitude %0.2f",[[recipient latitude] floatValue]);
+		NSLog(@"logitude %0.2f",[[recipient logitude] floatValue]);
 		
 		
 		AnnotationListObject *newAnnotation = [AnnotationListObject new];
@@ -277,7 +279,20 @@
 		[newAnnotation setCoordinate: tempCoordinate];
 		[newAnnotation setTitle: [recipient companyName]]; // or whatever
 		NSLog(@"Company name %@",[recipient companyName]);
-		[newAnnotation setSubtitle: [NSString stringWithFormat:@"%f", [recipient totalAmount]]]; // or whatever
+		NSString *_strAmount = @"Unknown";
+		NSString *_strJobs = @"Unknown";
+		float _amount = [[recipient totalAmount] floatValue];
+		int _jobs = [[recipient totalJobs] intValue];
+		if (_amount > 0) {
+			_strAmount = [NSString stringWithFormat:@"%0.2f", _amount];
+		}
+		NSLog(@"Amount %@", _strAmount);
+		if (_jobs > 0) {
+			_strJobs = [NSString stringWithFormat:@"%d", _jobs];
+		}
+		NSLog(@"Jobs %@", _strJobs);
+		
+		[newAnnotation setSubtitle : [NSString stringWithFormat:@"$ %@ / %@ jobs", _strAmount, _strJobs]];
 		[annotationList addObject: newAnnotation];
 		[newAnnotation release];
 	}
