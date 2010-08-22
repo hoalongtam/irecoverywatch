@@ -13,7 +13,7 @@
 @interface TagStripView : UIScrollView {
   NSMutableArray *tagViews;
   NSTimer *scrollTimer;
-  int _speed;
+  int speed;
   BOOL _reverse;
 }
 

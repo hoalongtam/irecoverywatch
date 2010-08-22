@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class  TickerViewController;
 @class  TagsViewController;
-@class 	MapViewController;
+@class  MapViewController;
 @class  ListViewController;
 @class  SettingsViewController;
 @class  CurrentLoc;
@@ -17,11 +17,11 @@
 
 
 @interface iRecoveryWatchAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
+  UIWindow *window;
 	
 	// AllViewControllers
 	UITabBarController *tabBarController;
-    TagsViewController *tagsViewController;
+  TagsViewController *tagsViewController;
 	MapViewController *mapViewController;
 	ListViewController *listViewController;
 	SettingsViewController *settingsViewController;

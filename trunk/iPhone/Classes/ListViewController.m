@@ -10,36 +10,39 @@
 
 
 @implementation ListViewController
+@synthesize emailField, amountField, closeTextFieldButton;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  emailField.text = @"buyer1_1282422017_per@yahoo.com";
 }
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+  [super didReceiveMemoryWarning];
 }
-- (void)viewDidUnload {
-    [super viewDidUnload];
+
+
+- (IBAction)callSnailMail:(id)sender {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you nuts?" message:@"Use PayPay, it's faster." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+  [alert show];
+  [alert release];
 }
+- (IBAction)callPayPal:(id)sender {
+  NSString *email = [emailField text];
+  float amount = (float)[[amountField text] floatValue];
+  NSString *url=[NSString stringWithFormat:@"https://pp-recv-money.appspot.com/receivemoney?senderEmail=%@&receiverEmail=%@&amount=%.2f&memo=stimulus", email, @"seller_1282422068_biz@yahoo.com", amount];
+  NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+  NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+}
+- (IBAction)closeTextField:(id)sender {
+  [emailField resignFirstResponder];
+  [amountField resignFirstResponder];
+}
+
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
 }
 
 
-#pragma mark -
-#pragma mark Table View Methods
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 1;
-  
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return nil;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-}
+
 @end

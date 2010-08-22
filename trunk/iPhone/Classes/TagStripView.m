@@ -32,7 +32,7 @@
                                                    selector: @selector(scrollTick)
                                                    userInfo: nil
                                                     repeats: YES];
-      _speed = 1;
+      speed = 1;
     }
     return self;
 }
