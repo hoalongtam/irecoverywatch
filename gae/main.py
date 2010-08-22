@@ -69,6 +69,10 @@ class Job(db.Model):
                 "ADDR" : self.pop_addr, "ST" : self.pop_state,
                 "CITY" :  self.pop_city, "CD" : self.pop_cd,
                 "JOBS_LIST" : self.jobs_list, "JOBS_COUNT" : self.jobs_count}
+        inf = float(1e3000)
+        for key in data:
+            if data[key] == inf:
+                data[key] = -1
         return json.dumps(data)
 
 class AdminHandler(webapp.RequestHandler):
