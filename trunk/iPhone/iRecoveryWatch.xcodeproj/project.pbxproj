@@ -47,6 +47,8 @@
 		4E70D5561221AC8F009DBBC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E70D5551221AC8F009DBBC8 /* Default.png */; };
 		4E71301E12209C19000B44E5 /* OverlayListObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E71301D12209C19000B44E5 /* OverlayListObjects.m */; };
 		6FDBD3021221C21400A3C0B9 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDBD3011221C21400A3C0B9 /* ListViewController.xib */; };
+		6FDBD3051221C25F00A3C0B9 /* paypal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FDBD3031221C25F00A3C0B9 /* paypal_logo.png */; };
+		6FDBD3061221C25F00A3C0B9 /* snailmail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FDBD3041221C25F00A3C0B9 /* snailmail.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		4E71301C12209C19000B44E5 /* OverlayListObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayListObjects.h; sourceTree = "<group>"; };
 		4E71301D12209C19000B44E5 /* OverlayListObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayListObjects.m; sourceTree = "<group>"; };
 		6FDBD3011221C21400A3C0B9 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListViewController.xib; path = Classes/ListViewController.xib; sourceTree = "<group>"; };
+		6FDBD3031221C25F00A3C0B9 /* paypal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_logo.png; sourceTree = "<group>"; };
+		6FDBD3041221C25F00A3C0B9 /* snailmail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snailmail.jpg; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iRecoveryWatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iRecoveryWatch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +286,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6FDBD3031221C25F00A3C0B9 /* paypal_logo.png */,
+				6FDBD3041221C25F00A3C0B9 /* snailmail.jpg */,
 				6FDBD3011221C21400A3C0B9 /* ListViewController.xib */,
 				4E70D5551221AC8F009DBBC8 /* Default.png */,
 				27399E441221A45100608494 /* MapTab.png */,
@@ -365,6 +371,8 @@
 				27399E4E1221A45100608494 /* TickerTab.png in Resources */,
 				4E70D5561221AC8F009DBBC8 /* Default.png in Resources */,
 				6FDBD3021221C21400A3C0B9 /* ListViewController.xib in Resources */,
+				6FDBD3051221C25F00A3C0B9 /* paypal_logo.png in Resources */,
+				6FDBD3061221C25F00A3C0B9 /* snailmail.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
