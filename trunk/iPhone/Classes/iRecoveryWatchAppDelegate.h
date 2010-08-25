@@ -7,24 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
-@class  TickerViewController;
-@class  TagsViewController;
-@class  MapViewController;
-@class  ListViewController;
-@class  SettingsViewController;
-@class  CurrentLoc;
+#import  "TickerViewController.h";
+#import  "TagsViewController.h";
+#import  "MapViewController.h";
+#import  "ListViewController.h";
+#import  "SettingsViewController.h";
+#import  "CurrentLoc.h";
 
 
 
 @interface iRecoveryWatchAppDelegate : NSObject <UIApplicationDelegate> {
-  UIWindow *window;
+ 
+	UIWindow *window;
 	
 	// AllViewControllers
 	UITabBarController *tabBarController;
-  TagsViewController *tagsViewController;
+    
+	TagsViewController *tagsViewController;
 	MapViewController *mapViewController;
 	ListViewController *listViewController;
 	SettingsViewController *settingsViewController;
+	
 	UINavigationController *tagsViewNavController; 
 	
 	//Data
@@ -37,15 +40,19 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
 @property (nonatomic, retain) UITabBarController *tabBarController;
+
 @property (nonatomic, retain) TagsViewController *tagsViewController;
 @property (nonatomic, retain) MapViewController *mapViewController;
 @property (nonatomic, retain) ListViewController *listViewController;
 @property (nonatomic, retain) SettingsViewController *settingsViewController;
+
 @property (nonatomic, retain) NSMutableArray *recipientArray;
 @property (nonatomic, retain) CurrentLoc *currentLocation;
 
 -(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate;
+
 -(NSMutableArray *) getRecipientsData:(NSMutableData *) _responseData;
 
 @end
