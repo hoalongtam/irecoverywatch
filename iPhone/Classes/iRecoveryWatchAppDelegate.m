@@ -7,12 +7,7 @@
 //
 
 #import "iRecoveryWatchAppDelegate.h"
-#import "TagsViewController.h"
-#import "MapViewController.h"
-#import "ListViewController.h"
-#import "SettingsViewController.h"
 #import "JSON.h"
-#import "CurrentLoc.h"
 #import "Recipient.h"
 
 
@@ -170,18 +165,7 @@ settingsViewController,recipientArray,currentLocation;
 	
 	
 	 [recipientReturnList	addObject:recipient];
-
-	 //DO NOT RELEASE THESE...
-	 
-	 // [companyId release];
-	 //[companyName release];
-	 //[totalAmount release];
-	 //[totalJobs release];
-	 //[logitude release];
-	 //[latitude release];
-	 //[primaryAgency release];
-		// [recipient release];
-	}
+}
 	
 	
 
@@ -281,6 +265,9 @@ settingsViewController,recipientArray,currentLocation;
 
 
 - (void)dealloc {
+	[jsonResponseData release];
+	[recipientArray release];
+	[currentLocation release];
 	
 	[tagsViewController release];
 	[mapViewController release];
@@ -288,6 +275,9 @@ settingsViewController,recipientArray,currentLocation;
 	[settingsViewController release];
 	[tagsViewNavController release];
 	
+	
+	
+	[tabBarController release];
     [window release];
     [super dealloc];
 }
