@@ -21,4 +21,6 @@
 
 - (id) initWithLongitude: (double) _long latitude:(double) _lat;
 
+- (id) initWithLongitude: (double) _long latitude:(double) _lat delegate:(id)_delegate;
+
 @end

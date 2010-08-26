@@ -32,9 +32,11 @@
 	
 	//Data
 	
-	NSMutableData *jsonResponseData;
+	
 	NSMutableArray *recipientArray;
 	CurrentLoc *currentLocation;
+	
+	
 	
 	
 }
@@ -50,6 +52,8 @@
 
 @property (nonatomic, retain) NSMutableArray *recipientArray;
 @property (nonatomic, retain) CurrentLoc *currentLocation;
+
+
 
 -(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate;
 

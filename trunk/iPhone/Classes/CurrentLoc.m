@@ -46,16 +46,24 @@
 	
 }
 
-/*
-- (void)locationManager:(CLLocationManager *)manager 
-    didUpdateToLocation:(CLLocation *)newLocation 
-           fromLocation:(CLLocation *)oldLocation {
-	
-	CLLocationCoordinate2D userCoordinate = newLocation.coordinate;
-	NSLog(@"new latitude  = %f",userCoordinate.latitude);
-	NSLog(@"new longitude = %f",userCoordinate.longitude);
-} 
-*/
+- (id) initWithLongitude: (double) _long latitude:(double) _lat delegate:(id)_delegate{
+   
+	if(self =	[super init]){
+		if (self != nil) {
+			self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+			self.locationManager.delegate = _delegate; // send loc updates to delegate
+			
+			self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+			[self.locationManager startUpdatingLocation];
+			
+			self.longitude=_long;
+			self.latitude =_lat;
+		}
+		
+		
+	}
+	return self;
+}
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
