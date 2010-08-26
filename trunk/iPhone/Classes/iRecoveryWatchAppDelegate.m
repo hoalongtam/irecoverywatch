@@ -126,8 +126,8 @@ settingsViewController,recipientArray,currentLocation;
 	[jsonResponseData appendData:data];	
 	self.recipientArray = [self getRecipientsData:jsonResponseData];
 	
-	
-	[tagsViewNavController.view setNeedsDisplay];
+	[tabBarController.selectedViewController.view setNeedsDisplay];
+	//[tagsViewNavController.view setNeedsDisplay];
 	//[mapViewController.view setNeedsDisplay];
 	
 	NSLog(@"Total Data Points %d",[recipientArray count]);
