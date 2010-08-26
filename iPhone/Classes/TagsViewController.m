@@ -26,12 +26,17 @@
  - (void)loadView {
  }
  */
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
+	// Muthu testing with the following... not sure it should be here
+	//[delegate getJSONData:nil urlDelegate:delegate];
 	
 	self.navigationController.toolbar.barStyle = UIBarStyleBlack;
 	
@@ -53,8 +58,7 @@
 		[self.view addSubview:strip];
 		y += h;
 	}
-  iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
+  
 	[self loadData:delegate.recipientArray];
 	for(int i = 0 ; i < STRIP_COUNT ; ++i) {
 		TagStripView *strip = [stripViews objectAtIndex: i];

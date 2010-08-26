@@ -23,12 +23,13 @@ settingsViewController,recipientArray,currentLocation;
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-	jsonResponseData = [[NSMutableData data] retain];
+    	//Get the lat and lon
 	
-	//Get the lat and lon
+	currentLocation = [[CurrentLoc alloc] initWithLongitude:37.37688 latitude:-121.9214 delegate:self];
 	
-	currentLocation = [[CurrentLoc alloc] initWithLongitude:37.37688 latitude:-121.9214];
+	//NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=3",[currentLocation latitude],[currentLocation longitude]];
+	
+	//[self getJSONData:queryString urlDelegate:self];
 	
 	NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=3",[currentLocation latitude],[currentLocation longitude]];
 	
@@ -103,6 +104,9 @@ settingsViewController,recipientArray,currentLocation;
 
 -(void) getJSONData:(NSString *) _queryString urlDelegate:(id)_delegate{
 	
+	if (_queryString == nil) {
+		_queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=3",[currentLocation latitude],[currentLocation longitude]];
+	}
 	static NSString *baseURL=@"http://irecoverywatch.appspot.com/query?";
 	//NSString *baseURL= [NSString stringWithString:@"http://irecoverywatch.appspot.com/query?lat=37.3&lon=-121.83&tol=5"];
 	
@@ -114,11 +118,17 @@ settingsViewController,recipientArray,currentLocation;
 	
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	
+	NSMutableData *jsonResponseData= [[NSMutableData data] retain];
 	
-	[jsonResponseData appendData:data];	
+	
 	recipientArray = [[NSMutableArray alloc] init];
 	
+	[jsonResponseData appendData:data];	
 	self.recipientArray = [self getRecipientsData:jsonResponseData];
+	
+	
+	[tagsViewNavController.view setNeedsDisplay];
+	//[mapViewController.view setNeedsDisplay];
 	
 	NSLog(@"Total Data Points %d",[recipientArray count]);
 	
@@ -132,14 +142,13 @@ settingsViewController,recipientArray,currentLocation;
 -(NSMutableArray *) getRecipientsData:(NSMutableData *) _responseData{
 	
 	NSString *responseString =[[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
-	[_responseData release];
 	//NSLog(@"JSON Response : %@",responseString);						 
 	//NSDictionary *results = [responseString JSONValue];
 	NSDictionary *results = [responseString JSONValue];
 	NSArray *recipients =[results objectForKey:@"results"];
 	
 	
-	NSMutableArray *recipientReturnList = [[NSMutableArray alloc]initWithCapacity:[recipients count]];
+	NSMutableArray *recipientReturnList = [NSMutableArray arrayWithCapacity:[recipients count]];
 	for(int i=0;i<[recipients count];i++)
  {
 	 NSDictionary *item= [recipients objectAtIndex:i];
@@ -179,13 +188,12 @@ settingsViewController,recipientArray,currentLocation;
 
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-	[jsonResponseData appendData:data];	
+		
 }
 
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
 	
-	[jsonResponseData setLength:0];	
 }
 
 
@@ -195,8 +203,7 @@ settingsViewController,recipientArray,currentLocation;
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
 	[connection release];
-	recipientArray = [[NSMutableArray alloc] init];
-	self.recipientArray = [self getRecipientsData:jsonResponseData];
+	
  }
 
 -(void) location{
@@ -262,10 +269,35 @@ settingsViewController,recipientArray,currentLocation;
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Location: %@", [newLocation description]);
+	
+	double longdiff= currentLocation.longitude - newLocation.coordinate.longitude;
+	double latdiff = currentLocation.latitude - newLocation.coordinate.latitude;
+	
+	if ((longdiff < -3 || longdiff > 3) || ((latdiff < -3 || latdiff > 3))) {
+		currentLocation.longitude=newLocation.coordinate.longitude;
+		currentLocation.latitude =newLocation.coordinate.latitude;
+		[tagsViewController.view setNeedsDisplay];
+		NSString *queryString = [NSString stringWithFormat:@"lon=%f&lat=%f&tol=3",[currentLocation longitude],[currentLocation latitude]];
+		
+		[self getJSONData:queryString urlDelegate:self];
+	}
+	
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+	   didFailWithError:(NSError *)error
+{
+	NSLog(@"Error: %@", [error description]);
+}
 
 
 - (void)dealloc {
-	[jsonResponseData release];
+	
 	[recipientArray release];
 	[currentLocation release];
 	

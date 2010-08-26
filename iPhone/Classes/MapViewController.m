@@ -29,12 +29,12 @@
 
 - (void)viewDidLoad {
 	//mapView = (MKMapView*)self.view;
-
+	
 	[mapView setZoomEnabled:YES];
 	[mapView setMapType:MKMapTypeStandard];
     [mapView setScrollEnabled:YES];
     [mapView setShowsUserLocation:YES];
-		
+	
 	mapView.delegate=self;	
 	
 	//cLoc = [[CurrentLoc alloc]init];
@@ -42,54 +42,19 @@
 	//NSLog(@"stop here");
 	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	[self doAnnotations:delegate.recipientArray];
+	
+	//Muthu trying with the following not sure it has to be here..
+	//[delegate getJSONData:nil urlDelegate:delegate];
+	
+	[self doAnnotations:[delegate recipientArray]];
 	
 	[self showMap];
+
+	
 }
-
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 	
-
-
-	
-	
-	
-	/*
-	NSMutableArray *array = [[NSMutableArray alloc] init];
-
-	AwardData *newEntry = [[AwardData alloc] init];
-	// Set Values
-	
-	newEntry.CompanyName = @"ABC";
-	newEntry.jobs = 23;
-	newEntry.amount = 12345.46;
-	newEntry.latitude = 37.37688;
-	newEntry.longitude =  -121.9214;
-
-	// Add the AwardData object to the array
-	[array addObject:newEntry];
-	[newEntry release];
-
-	newEntry = [[AwardData alloc] init];
-	// Set Values
-	newEntry.CompanyName = @"XYZ";
-	newEntry.jobs = 43;
-	newEntry.amount = 34576.24;
-	newEntry.latitude = 37.47688;
-	newEntry.longitude =  -121.6214;
-	
-	// Add the AwardData object to the array
-	[array addObject:newEntry];
-	[newEntry release];
-	
-	[self doAnnotations:array];
-	[self doOverlays:array];
-	[array release];
-	 */
-
-
-
-
 }
 
 
@@ -100,51 +65,6 @@
 
 	
 	
-	
-	
-	
-	
-	/* 
-	if (overlay == mapViewx.userLocation)
-	{
-		[mapView setCenterCoordinate:mapView.userLocation.coordinate animated:TRUE];
-		// We can return nil to let the MapView handle the default annotation view (blue dot):
-		return nil;
-		
-		// Or instead, we can create our own blue dot and even configure it:
-		//annView = (MKPinAnnotationView*)[mapViewx dequeueReusableAnnotationViewWithIdentifier:@"blueDot"];
-		//if (annView != nil)
-		{
-			//	annView.annotation = annotation;
-		}
-		//else
-		{
-			//	annView = (MKPinAnnotationView*)[[[NSClassFromString(@"MKUserLocationView") alloc] initWithAnnotation:annotation reuseIdentifier:@"blueDot"] autorelease];
-			
-			// Optionally configure the MKUserLocationView object here
-			// Google MKUserLocationView for the options
-		}
-	}
-	else
-	{
-		// The requested annotation view is for another annotation than the userLocation.
-		// Let's return a normal pin:
-		annView = (MKPinAnnotationView*)[mapViewx dequeueReusableAnnotationViewWithIdentifier:[annotation title]];
-		
-		if (annView != nil)
-		{
-			annView.annotation = annotation;
-		}
-		else
-		{
-			annView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[annotation title]] autorelease];
-			annView.pinColor = MKPinAnnotationColorGreen;
-			
-			annView.canShowCallout = TRUE;
-		}
-		
-	}
-	*/
 	
 	
 	
@@ -281,12 +201,14 @@
 		[newAnnotation setTitle: [recipient companyName]];
 		[newAnnotation setKey: [recipient awardKey]];
 		//NSLog(@"Company name %@",[recipient companyName]);
-		NSString *_strAmount = @"Unknown";
-		NSString *_strJobs = @"Unknown";
+		NSString *_strAmount = @"$ ? ";
+		NSString *_strJobs = @" ? ";
 		float _amount = [[recipient totalAmount] floatValue];
 		int _jobs = [[recipient totalJobs] intValue];
 		if (_amount > 0) {
-			_strAmount = [NSString stringWithFormat:@"%0.2f", _amount];
+			NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+			[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+			_strAmount = [formatter stringFromNumber:[recipient totalAmount]];
 		}
 		//NSLog(@"Amount %@", _strAmount);
 		if (_jobs > 0) {
@@ -294,29 +216,16 @@
 		}
 		//NSLog(@"Jobs %@", _strJobs);
 		
-		[newAnnotation setSubtitle : [NSString stringWithFormat:@"$ %@ / %@ jobs", _strAmount, _strJobs]];
-		if (_amount > 0 && _jobs > 0) {
+		[newAnnotation setSubtitle : [NSString stringWithFormat:@"%@ / %@ jobs", _strAmount, _strJobs]];
+		//if (_amount > 0 && _jobs > 0) {
 			[annotationList addObject: newAnnotation];
-			Count++;
+		//	Count++;
 			
-		}
+		//}
 		[newAnnotation release];
 	}
 	
-	// create loop here if necessary
-	/*
-	for (AwardData *entryToAnnotate in recoveryData) {
-		AnnotationListObject *newAnnotation = [AnnotationListObject new];
-		CLLocationCoordinate2D tempCoordinate;
-		tempCoordinate.latitude = entryToAnnotate.latitude;  // set latitude to required value
-		tempCoordinate.longitude =  entryToAnnotate.longitude; // set longitude to required value
-		[newAnnotation setCoordinate: tempCoordinate];
-		[newAnnotation setTitle: entryToAnnotate.CompanyName]; // or whatever
-		[newAnnotation setSubtitle: [NSString stringWithFormat:@"%f", entryToAnnotate.amount]]; // or whatever
-		[annotationList addObject: newAnnotation];
-		[newAnnotation release];
-	}*/
-	// end loop here if looped
+		// end loop here if looped
 	NSLog(@"Selected items %d", Count);
 	
 	[mapView addAnnotations: annotationList];
@@ -333,13 +242,19 @@
 	CLLocation *userLoc = mapView.userLocation.location;
     CLLocationCoordinate2D userCoordinate = userLoc.coordinate;
 	
-	//NSLog(@"user latitude = %f",userCoordinate.latitude);
-	//NSLog(@"user longitude = %f",userCoordinate.longitude);
 	
 	userCoordinate.latitude  = 37.37688;
 	userCoordinate.longitude = -121.9214;
 	
-	mapView.region = MKCoordinateRegionMakeWithDistance(userCoordinate, 6000, 6000); 
+	iRecoveryWatchAppDelegate *delegate = (iRecoveryWatchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	if ([delegate recipientArray] != nil && [[delegate recipientArray] count] >0) {
+		Recipient *recipient = [[delegate recipientArray] objectAtIndex:0];
+		userCoordinate.latitude=[recipient.latitude doubleValue];
+		userCoordinate.longitude=[recipient.logitude doubleValue];
+	}
+	
+	mapView.region = MKCoordinateRegionMakeWithDistance(userCoordinate, 10000, 10000); 
 	
 	
 	
